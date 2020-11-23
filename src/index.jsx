@@ -1,16 +1,19 @@
 import React from 'react';
 import { render } from 'react-dom';
 import './index.html';
+import Question from './components/question/Question.jsx'
+import questionTestData from './components/question/question.data.ts';
 
 render(
   <>
     <header>
-      <h1>React Starter</h1>
+      <h1>Formulář</h1>
     </header>
     <main>
-      <p>Moje první React stránka</p>
+      <p>První nástřel formuláře</p>
+      <Question question={questionTestData.question} answers={questionTestData.answers}/>
     </main>
-    <footer>Martin Podloucký</footer>
+    
   </>,
   document.querySelector('#app'),
 );
