@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from 'react-dom';
 import './index.html';
-import Question from './components/question/Question.jsx'
-import Category from './components/category/Category.jsx'
-import questionTestData from './components/question/question.data.ts';
+import Category from './components/category/Category.jsx';
+import categoryTestData from './components/category/category.data.ts';
+
 
 render(
   <>
@@ -12,7 +12,11 @@ render(
     </header>
     <main>
       <p>První nástřel formuláře</p>
-      <Question question={questionTestData.question} answers={questionTestData.answers}/>
+      <Category 
+      name={categoryTestData.name} 
+      description={categoryTestData.description}
+      questions={categoryTestData.questions}
+      />
     </main>
     
   </>,
