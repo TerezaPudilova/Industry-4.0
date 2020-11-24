@@ -1,19 +1,32 @@
 import React from 'react';
 import { render } from 'react-dom';
-import './index.html';
-import Survey from './components/survey/Survey.jsx';
-import surveyTestData from './components/survey/survey.data.js'
+import './homepage/menu.jsx';
+import './components/index.jsx';
+import './homepage/registerform.jsx';
+import { Menu } from './homepage/menu.jsx';
+import {Formular} from './components/index.jsx';
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import {UvodniStranka} from './homepage/uvodnistranka.jsx';
+import {RegisterForm} from './homepage/registerform.jsx';
 
-render(
-  <>
-    <header>
-      <h1>Formulář</h1>
-    </header>
-    <main>
-      <Survey mycategory = {surveyTestData.categories}
-      />
-    </main>
-    
-  </>,
-  document.querySelector('#app'),
-);
+import './style.css';
+
+
+
+
+const App =() => {
+  return(
+    <>
+    <BrowserRouter>
+      <Menu/>
+      <Switch>
+        <Route path="/dotaznik" component={Formular} />
+      </Switch>
+    </BrowserRouter>
+    <UvodniStranka/>
+    <RegisterForm/>
+    </>
+  );
+}
+
+render(<App/>, document.querySelector('#app'));
