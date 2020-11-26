@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 
-
 export const Menu=()=>{
 
   return(
@@ -14,6 +13,7 @@ export const Menu=()=>{
       </div>
       <div className="links">
         <Link className="link" to="/dotaznik" >Dotazník</Link>
+        <Link className="link" to="/finalPage" >Finalpage</Link>
         <a className="link" href="#">FBE Praha</a>
         <a className="link" href="#">FBE Bratislava</a>
       </div>
