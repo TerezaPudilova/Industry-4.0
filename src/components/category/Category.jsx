@@ -5,21 +5,38 @@ const Category = (props) => {
   const name = props.name;
   const description = props.description;
   const questions = props.questions;
-  console.log(name)
+  let categoryScore = 0;
+
+function handleMarkedChange(item) {
+  console.log(item)
+  categoryScore += item
+  console.log(categoryScore)
+}
 
   const questionsDiv = questions.map((question) => (
-    <div className="question">
-      <Question
-        question={question.question}
-        answers={question.answers}
-      />
-    </div>
+    <Question 
+    question={question.question} 
+    answers={question.answers}
+    onMarkedChange={handleMarkedChange}
+    />
   ));
+
+  const countCategoryScore = () => {
+    questionsDiv.map((qDiv) => {
+      console.log(qDiv.marked)
+    });
+  };
+
   return (
     <>
-      <div>{name}</div>
-      <div>{description}</div>
-      <div>{questionsDiv}</div>
+      <div className="category">
+        <div>{name}</div>
+        <div>{description}</div>
+        <div>{questionsDiv}</div>
+      </div>
+      <div>
+        <button onClick={countCategoryScore}>Spočítej</button>
+      </div>
     </>
   );
 };
