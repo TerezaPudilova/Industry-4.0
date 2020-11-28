@@ -1,27 +1,27 @@
 import React from 'react';
 import { render } from 'react-dom';
-import './homepage/menu.jsx';
+import './components/menu.jsx';
 import './components/index.jsx';
 import './homepage/registerform.jsx';
-import { Menu } from './homepage/menu.jsx';
+import { Menu } from './components/menu.jsx';
 import {Formular} from './components/index.jsx';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import {UvodniStranka} from './homepage/uvodnistranka.jsx';
 import {Postup} from './homepage/postup.jsx';
 import {RegisterForm} from './homepage/registerform.jsx';
 import {FinalPage} from './finalpage/finalpage.jsx';
-
 import './style.css';
+import { Homepage } from './homepage/homepage.jsx';
 
 
 const App =() => {
   return(
     <>
     <BrowserRouter>
-      <Menu/>
-      <Switch>
+         <Switch>
         <Route path="/dotaznik" component={Formular} />
         <Route path="/finalPage" component={FinalPage} />
+        <Route path="/" component={Homepage} />
       </Switch>
     </BrowserRouter>
     <UvodniStranka/>

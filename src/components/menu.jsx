@@ -12,7 +12,7 @@ export const Menu=()=>{
         <img id="logo" src="./img/logoFBE.jpg" alt="logoFBE"/>
       </div>
       <div className="links">
-        <Link className="link" to="/dotaznik" >Dotazník</Link>
+        <Link className="link" to="/dotaznik" >Questionnnaire</Link>
         <Link className="link" to="/finalPage" >Finalpage</Link>
         <a className="link" href="#">FBE Praha</a>
         <a className="link" href="#">FBE Bratislava</a>

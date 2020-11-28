@@ -9,6 +9,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
+    historyApiFallback: true,
     writeToDisk: true,
   },
   resolve: {
