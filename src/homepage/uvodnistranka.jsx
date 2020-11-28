@@ -3,6 +3,7 @@ import { Grid } from 'semantic-ui-react';
 import { Container, FullWidthContainer } from '../styles/Container';
 import { colors } from '../styles/variables';
 import DefaultTemplate from '../templates/DefaultTemplate';
+import graf from '../img/graf.jpg';
 
 export const UvodniStranka = () => {
   return (
@@ -56,7 +57,7 @@ export const UvodniStranka = () => {
                 </Grid.Column>
                 <Grid.Column>
                   <div className="graf">
-                    <img src="img/graf.jpg" alt="graf" />
+                    <img src={graf} alt="graf" />
                   </div>
                 </Grid.Column>
               </Grid.Row>

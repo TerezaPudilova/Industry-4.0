@@ -29,9 +29,7 @@ const App = () => {
           <Route path="/" component={Homepage} />
         </Switch>
       </BrowserRouter>
-      <UvodniStranka />
-      <Postup />
-      <RegisterForm />
+           <RegisterForm />
     </>
   );
 };
