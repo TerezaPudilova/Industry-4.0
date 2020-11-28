@@ -7,19 +7,19 @@ const Category = (props) => {
   const questions = props.questions;
   console.log(name)
 
-  const questionsDiv = questions.map((question) => (
+  return (
+    <>
+      <div>{name}</div>
+      <div>{description}</div>
+      <div>{questions.map((question, i) => (
     <div key={question.question} className="question">
+      i={i+1} /7
       <Question
         question={question.question}
         answers={question.answers}
       />
     </div>
-  ));
-  return (
-    <>
-      <div>{name}</div>
-      <div>{description}</div>
-      <div>{questionsDiv}</div>
+  ))}</div>
     </>
   );
 };

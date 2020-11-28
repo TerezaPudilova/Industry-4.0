@@ -14,7 +14,9 @@ export const Menu = () => {
             <Grid.Row>
               <Grid.Column width={2}>
                 <div className="logoFBE">
-                  <img src={logo} alt="logoFBE" width="150" height="60" />
+                  <Link className="link" to="/">
+                    <img src={logo} alt="logoFBE" width="150" height="60" />
+                  </Link>
                 </div>
               </Grid.Column>
               <Grid.Column width={14}>

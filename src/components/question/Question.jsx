@@ -1,24 +1,42 @@
-import React, {useState} from 'react';
-
+import React, { useEffect, useState } from 'react';
+import { Form, Radio } from 'semantic-ui-react';
+import { shuffle } from '../../shuffle';
 const Question = (props) => {
-const [marked,setMarked] = useState(0);
+  const [value, setValue] = useState();
+  const [shuffled, setShuffled] = useState([]);
 
-const question = props.question;
-const answers = props.answers;
+  useEffect(() => {
+    const answers = [...props.answers];
+    shuffle(answers);
+    setShuffled(answers);
+  }, []);
 
-const answersDiv = answers.map((answer) => <div key={answer.text}   className="answer">
-  <div>{answer.number}</div>
-  <div>{answer.text}</div>
-  <button onClick={() => setMarked(answer.number)}>Vybrat</button>
-</div>
-);
+  const question = props.question;
+
+  const handleChange = (e, { value }) => {
+    setValue(value);
+  };
 
   return (
     <>
       <div className="question">
         <div>{question}</div>
         <div>
-          {answersDiv}
+          {shuffled.map((answer) => (
+            <Form.Field key={answer.text}>
+              {/*  <div>{answer.number}</div>
+              <div>{answer.text}</div>
+              <button onClick={() => setMarked(answer.number)}>Vybrat</button> */}
+
+              <Radio
+                label={answer.text}
+                value={answer.number}
+                name={question}
+                checked={value === answer.number}
+                onChange={handleChange}
+              />
+            </Form.Field>
+          ))}
         </div>
       </div>
     </>
