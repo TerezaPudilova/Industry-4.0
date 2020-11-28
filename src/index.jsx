@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { render } from 'react-dom';
 import './components/menu.jsx';
 import './components/index.jsx';
@@ -15,6 +15,15 @@ import { Homepage } from './homepage/homepage.jsx';
 import { Button } from 'semantic-ui-react';
 
 const App = () => {
+  const [surveyScore, setSurveyScore] = useState(
+    new Array(7).fill(new Array(7).fill(0)),
+  );
+
+  const handleChange = (newSurveyScore) => {
+    setSurveyScore(newSurveyScore);
+    console.log(newSurveyScore);
+  };
+
   return (
     <>
       <link
@@ -24,8 +33,12 @@ const App = () => {
       />
       <BrowserRouter>
         <Switch>
-          <Route path="/dotaznik/:categoryCodeName" component={Formular} />
-          <Route path="/finalPage" component={FinalPage} />
+          <Route path="/dotaznik/:categoryCodeName">
+            <Formular onChange={handleChange} surveyScore={surveyScore} />
+          </Route>
+          <Route path="/finalPage">
+            <FinalPage surveyScore={surveyScore} />
+          </Route>
           <Route path="/" component={Homepage} />
         </Switch>
       </BrowserRouter>

@@ -5,21 +5,18 @@ import Category from '../category/Category.jsx';
 import CategorySwitcher from '../categorySwitcher/categorySwitcher.jsx';
 
 const Survey = (props) => {
-  const [surveyScore, setSurveyScore] = useState(
-    new Array(7).fill(new Array(7).fill(0)),
-  );
   const categories = props.categories;
   const codeNames = categories.map((category) => category.codeName);
   const { categoryCodeName } = useParams();
   console.log(categoryCodeName);
 
   const handleValueChange = (value, questionIndex) => {
-    const copySurveyScore = [...surveyScore];
+    const copySurveyScore = [...props.surveyScore];
 
     copySurveyScore[categoryIndex] = [...copySurveyScore[categoryIndex]];
     copySurveyScore[categoryIndex][questionIndex] = value;
-    setSurveyScore(copySurveyScore);
-    console.log(copySurveyScore);
+
+    props.onChange(copySurveyScore);
   };
 
   const categoryIndex = codeNames.indexOf(categoryCodeName);
