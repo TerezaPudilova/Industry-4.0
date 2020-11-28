@@ -2,8 +2,37 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Kontakty } from './kontakty.jsx';
 import { Menu } from '../components/menu.jsx';
+import { Radar } from 'react-chartjs-2';
 
-export const FinalPage = () => {
+export const FinalPage = (props) => {
+  const data = {
+    labels: [
+      'Eating',
+      'Drinking',
+      'Sleeping',
+      'Designing',
+      'Coding',
+      'Cycling',
+      'Running',
+    ],
+    datasets: [
+      {
+        backgroundColor: 'rgba(179,181,198,0.2)',
+        borderColor: 'rgba(179,181,198,1)',
+        pointBackgroundColor: 'rgba(179,181,198,1)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(179,181,198,1)',
+        data: props.surveyScore.map(
+          (category) =>
+            category.reduce(
+              (agg, curr) => (agg + curr === 0 ? 0 : 4 - curr),
+              0,
+            ) / 7,
+        ),
+      },
+    ],
+  };
   return (
     <>
       <Menu />
@@ -45,7 +74,7 @@ export const FinalPage = () => {
           k celkové optimalizaci.
         </p>
       </div>
-
+      <Radar data={data} width={500} height={500} legend={{ display: false }} />
       <Kontakty />
     </>
   );

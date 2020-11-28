@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams, Redirect, useRouteMatch } from 'react-router-dom';
+import { useParams, Redirect, useRouteMatch, Link } from 'react-router-dom';
 import { Form } from 'semantic-ui-react';
 import Category from '../category/Category.jsx';
 import CategorySwitcher from '../categorySwitcher/categorySwitcher.jsx';
@@ -20,10 +20,13 @@ const Survey = (props) => {
   };
 
   const categoryIndex = codeNames.indexOf(categoryCodeName);
+
   if (categoryIndex === -1) {
     return <Redirect to="/dotaznik/MSA" />;
   }
 
+  const previousUrl = `/dotaznik/${codeNames[categoryIndex - 1]}`;
+  const nextUrl = `/dotaznik/${codeNames[categoryIndex + 1]}`;
   const category =
     categories.find((item) => item.codeName === categoryCodeName) ??
     categories[0];
@@ -42,6 +45,12 @@ const Survey = (props) => {
           onValueChange={handleValueChange}
         />
       </div>
+      <Link to={previousUrl}>
+        <button disabled={categoryIndex === 0}>Předchozí</button>
+      </Link>
+      <Link to={nextUrl}>
+        <button disabled={categoryIndex === 6}>Další</button>
+      </Link>
     </Form>
   );
 };
