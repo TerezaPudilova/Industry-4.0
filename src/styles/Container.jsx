@@ -7,5 +7,7 @@ export const Container = styled.div`
 `;
 export const FullWidthContainer = styled.div`
   width: 100%;
-  background-color: ${colors.lightGrey};
+  background-color: ${(props) => props.bgColor || colors.lightGrey};
+  color: ${(props) =>
+    props.bgColor === colors.darkBlue ? 'white' : 'inherit'};
 `;
