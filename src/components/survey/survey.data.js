@@ -542,7 +542,7 @@ const surveyTestData = {
     },
     {
       name: 'Interakce a komunikační tok',
-      codeName: 'komunikace'
+      codeName: 'komunikace',
       description: '',
       questions: [
         {
@@ -685,7 +685,7 @@ const surveyTestData = {
     },
     {
       name: 'Plánování a supply chain management',
-      codeName: 'SCM'
+      codeName: 'SCM',
       description: '',
       questions: [
         {
@@ -818,7 +818,7 @@ const surveyTestData = {
     },
     {
       name: 'Platformy and flexibilita současných technologií',
-      codeName: 'platformy'
+      codeName: 'platformy',
       description: '',
       questions: [
         {
