@@ -2,6 +2,7 @@ const surveyTestData = {
   categories: [
     {
       name: 'Měřící systémy, včetně MSA (Analýza systému měření)',
+      codeName:'MSA',
       description: '',
       questions: [
         {
@@ -141,6 +142,7 @@ const surveyTestData = {
     },
     {
       name: 'Metody, eliminace plýtvání a úroveň lean implementace',
+      codeName: 'lean',
       description: '',
       questions: [
         {
@@ -278,6 +280,7 @@ const surveyTestData = {
     },
     {
       name: 'Úroveň procesní standardizace a bezpečnosti',
+      codeName: 'standardy-bezpecnost',
       description: '',
       questions: [
         {
@@ -412,6 +415,7 @@ const surveyTestData = {
     },
     {
       name: 'schopnost řídit hodnotový tok',
+      codeName: 'VSM',
       description: '',
       questions: [
         {
@@ -538,6 +542,7 @@ const surveyTestData = {
     },
     {
       name: 'Interakce a komunikační tok',
+      codeName: 'komunikace'
       description: '',
       questions: [
         {
@@ -680,6 +685,7 @@ const surveyTestData = {
     },
     {
       name: 'Plánování a supply chain management',
+      codeName: 'SCM'
       description: '',
       questions: [
         {
@@ -812,6 +818,7 @@ const surveyTestData = {
     },
     {
       name: 'Platformy and flexibilita současných technologií',
+      codeName: 'platformy'
       description: '',
       questions: [
         {
