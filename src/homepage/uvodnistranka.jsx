@@ -1,4 +1,5 @@
 import React from 'react';
+import { Grid } from 'semantic-ui-react';
 import { Container, FullWidthContainer } from '../styles/Container';
 import { colors } from '../styles/variables';
 import DefaultTemplate from '../templates/DefaultTemplate';
@@ -39,21 +40,27 @@ export const UvodniStranka = () => {
 
         <FullWidthContainer bgColor={colors.darkBlue}>
           <Container>
-            <p>
-              Dotazník je rozdělen na 7 průřezových oblastí charakterizujících
-              fungování firmy. Každá oblast obsahuje 7 otázek s alternativami
-              odpovědí.
-            </p>
-
-            <p>
-              Výstupem z hodnocení je Závěrečná zpráva, která graficky znázorní
-              úroveň vaší společnosti v definovaných oblastech. V závěru uvádí
-              tipy na zlepšení.
-            </p>
-
-            <div className="graf">
-              <img src="img/graf.jpg" alt="graf" />
-            </div>
+            <Grid divided="vertically">
+              <Grid.Row columns={2}>
+                <Grid.Column>
+                  <p>
+                    Dotazník je rozdělen na 7 průřezových oblastí
+                    charakterizujících fungování firmy. Každá oblast obsahuje 7
+                    otázek s alternativami odpovědí.
+                  </p>
+                  <p>
+                    Výstupem z hodnocení je Závěrečná zpráva, která graficky
+                    znázorní úroveň vaší společnosti v definovaných oblastech. V
+                    závěru uvádí tipy na zlepšení.
+                  </p>
+                </Grid.Column>
+                <Grid.Column>
+                  <div className="graf">
+                    <img src="img/graf.jpg" alt="graf" />
+                  </div>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
           </Container>
         </FullWidthContainer>
       </DefaultTemplate>
