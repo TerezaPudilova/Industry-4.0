@@ -10,9 +10,6 @@ export const Formular = () => {
     <>
       <Menu />
       <Container>
-        <header>
-          <h1>Formulář</h1>
-        </header>
         <main>
           <Survey categories={surveyTestData.categories} />
         </main>
