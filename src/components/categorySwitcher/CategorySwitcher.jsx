@@ -40,7 +40,9 @@ const CategorySwitcher = (props) => {
       {categories.map((category, i) => (
         <ListItem key={category.codeName}>
           <Link to={`/dotaznik/${category.codeName}`}>
-            <CategoryNumber isActive={i === 2}>{i + 1}.</CategoryNumber>{' '}
+            <CategoryNumber isActive={i === props.categoryId}>
+              {i + 1}.
+            </CategoryNumber>{' '}
             <CategoryName>{category.name}</CategoryName>
           </Link>
         </ListItem>

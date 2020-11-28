@@ -21,8 +21,8 @@ export const Menu = () => {
               </Grid.Column>
               <Grid.Column width={14}>
                 <div className="links">
-                  <Link className="link" to="/dotaznik">
-                    Questionnnaire
+                  <Link className="link" to="/dotaznik/:categoryCodeName">
+                    Questionnaire
                   </Link>
                   <Link className="link" to="/finalPage">
                     Finalpage

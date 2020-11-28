@@ -13,8 +13,8 @@ const Question = (props) => {
 
   const question = props.question;
 
-  const handleChange = (e, { value }) => {
-    setValue(value);
+  const handleChange = (value) => {
+    props.onValueChange(value);
   };
 
   return (
@@ -29,11 +29,14 @@ const Question = (props) => {
               <button onClick={() => setMarked(answer.number)}>Vybrat</button> */}
 
               <Radio
-                label={answer.text}
+                label={answer.text + ' ' + answer.number}
                 value={answer.number}
                 name={question}
                 checked={value === answer.number}
-                onChange={handleChange}
+                onClick={() => {
+                  setValue(answer.number);
+                  handleChange(answer.number);
+                }}
               />
             </Form.Field>
           ))}

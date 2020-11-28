@@ -24,12 +24,12 @@ const App = () => {
       />
       <BrowserRouter>
         <Switch>
-          <Route path="/dotaznik" component={Formular} />
+          <Route path="/dotaznik/:categoryCodeName" component={Formular} />
           <Route path="/finalPage" component={FinalPage} />
           <Route path="/" component={Homepage} />
         </Switch>
       </BrowserRouter>
-           <RegisterForm />
+      <RegisterForm />
     </>
   );
 };
