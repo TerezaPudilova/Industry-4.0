@@ -8,7 +8,7 @@ const Category = (props) => {
   console.log(name)
 
   const questionsDiv = questions.map((question) => (
-    <div className="question">
+    <div key={question.question} className="question">
       <Question
         question={question.question}
         answers={question.answers}

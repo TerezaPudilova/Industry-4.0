@@ -4,7 +4,7 @@ import Category from '../category/Category.jsx';
 const Survey = (props) => {
   const categories = props.mycategory;
   const categoryDiv = categories.map((category) => (
-    <div className="category">
+    <div key={category.name} className="category">
       <Category
         name={category.name}
         description={category.description}

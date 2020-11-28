@@ -6,7 +6,7 @@ const [marked,setMarked] = useState(0);
 const question = props.question;
 const answers = props.answers;
 
-const answersDiv = answers.map((answer) => <div className="answer">
+const answersDiv = answers.map((answer) => <div key={answer.text}   className="answer">
   <div>{answer.number}</div>
   <div>{answer.text}</div>
   <button onClick={() => setMarked(answer.number)}>Vybrat</button>

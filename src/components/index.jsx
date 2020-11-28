@@ -4,7 +4,7 @@ import Survey from './survey/Survey.jsx';
 import surveyTestData from './survey/survey.data.js'
 
 export const Formular=()=>{ 
-render(
+return(
   <>
     <header>
       <h1>Formulář</h1>
@@ -14,7 +14,6 @@ render(
       />
     </main>
     
-  </>,
-  document.querySelector('#app'),
+  </>
 );
 }
