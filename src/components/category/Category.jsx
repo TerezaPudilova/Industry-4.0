@@ -6,12 +6,6 @@ const Category = (props) => {
   const name = props.name;
   const description = props.description;
   const questions = props.questions;
-  const [categoryScore, setCategoryScore] = useState(0);
-
-  const handleValueChange = (item) => {
-    setCategoryScore(categoryScore + item);
-    console.log(categoryScore + item);
-  };
 
   return (
     <>
@@ -24,7 +18,7 @@ const Category = (props) => {
             <Question
               question={question.question}
               answers={question.answers}
-              onValueChange={handleValueChange}
+              onValueChange={(value) => props.onValueChange(value, i)}
               required
               type={props.type}
               name={props.itemName}
