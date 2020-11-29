@@ -11,6 +11,8 @@ const Survey = (props) => {
   const { categoryCodeName } = useParams();
   const categoryIndex = codeNames.indexOf(categoryCodeName);
 
+  const isLastCategory = categoryIndex === 6;
+
   const handleValueChange = (value, questionIndex) => {
     const copySurveyScore = [...props.surveyScore];
 
@@ -67,11 +69,18 @@ const Survey = (props) => {
       <Link to={previousUrl}>
         <Button disabled={categoryIndex === 0}>Předchozí</Button>
       </Link>
-      <Link to={nextUrl}>
-        <Button onClick={onNextHandler} disabled={categoryIndex === 6}>
-          Další
-        </Button>
-      </Link>
+      {isLastCategory ? (
+        <Link to="/vysledky">
+          <Button onClick={onNextHandler}>Vyhodnotit</Button>
+        </Link>
+      ) : (
+        <Link to={nextUrl}>
+          <Button onClick={onNextHandler} disabled={categoryIndex === 6}>
+            Další
+          </Button>
+        </Link>
+      )}
+
       {!isCategoryValid && (
         <Message
           error

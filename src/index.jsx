@@ -36,7 +36,7 @@ const App = () => {
           <Route path="/dotaznik/:categoryCodeName">
             <Formular onChange={handleChange} surveyScore={surveyScore} />
           </Route>
-          <Route path="/finalPage">
+          <Route path="/vysledky">
             <FinalPage surveyScore={surveyScore} />
           </Route>
           <Route path="/" component={Homepage} />

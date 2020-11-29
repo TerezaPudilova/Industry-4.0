@@ -36,6 +36,7 @@ module.exports = {
             options: {
               name: '[name]-[hash:6].[ext]',
               outputPath: 'img',
+              publicPath: '/img',
             },
           },
         ],

@@ -24,7 +24,7 @@ export const Menu = () => {
                   <Link className="link" to="/dotaznik/:categoryCodeName">
                     Questionnaire
                   </Link>
-                  <Link className="link" to="/finalPage">
+                  <Link className="link" to="/vysledky">
                     Finalpage
                   </Link>
                   <a className="link" href="#">
