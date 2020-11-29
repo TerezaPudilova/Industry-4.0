@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Menu } from 'semantic-ui-react';
+import { Button, Checkbox, Form, Menu } from 'semantic-ui-react';
 import { CurrentUser } from '../currentUser';
 import { db } from '../db.jsx';
 
-const RegisterformItem = (props) => {
+/* const RegisterformItem = (props) => {
   const [value, setValue] = useState('');
   const handleChange = (e) => {
     setValue(e.target.value);
@@ -26,7 +26,7 @@ const RegisterformItem = (props) => {
       <br />
     </>
   );
-};
+}; */
 
 export const RegisterForm = () => {
   const [formstate, setFormState] = useState('');
@@ -39,7 +39,7 @@ export const RegisterForm = () => {
     <>
       <Menu />
       <div className="registracniFormular">Registrační formulář</div>
-      <form
+      <Form
         onSubmit={(event) => {
           event.preventDefault();
           <CurrentUser
@@ -65,56 +65,82 @@ export const RegisterForm = () => {
         }}
       >
         <div className="registrationForm">
-          <RegisterformItem
-            onChange={(value) => {
-              handleChange('jmenoPrijmeni', value);
-            }}
-            name="Jméno a příjmení"
-            itemName="jmenoPrijmeni"
-            type="text"
-          />
-          <RegisterformItem
-            onChange={(value) => {
-              handleChange('kontaktniTelefon', value);
-            }}
-            name="Kontantní telefon"
-            itemName="kontaktniTelefon"
-            type="tel"
-          />
-          <RegisterformItem
-            onChange={(value) => {
-              handleChange('email', value);
-            }}
-            name="e-mail"
-            itemName="email"
-            type="email"
-          />
-
-          <RegisterformItem
-            onChange={(value) => {
-              handleChange('pracovniPozice', value);
-            }}
-            name="Pracovní pozice"
-            itemName="pracovniPozice"
-            type="text"
-          />
-          <RegisterformItem
-            onChange={(value) => {
-              handleChange('nazevFirmy', value);
-            }}
-            name="Název firmy"
-            itemName="nazevFirmy"
-            type="text"
-          />
-
+          <Form.Field>
+            <label>Jméno</label>
+            <input placeholder="Jméno" />
+            {/* <RegisterformItem */}
+            {/* onChange={(value) => {
+                handleChange('jmenoPrijmeni', value);
+              }}
+              name="Jméno a příjmení"
+              itemName="jmenoPrijmeni"
+              type="text" */}
+            {/* /> */}
+          </Form.Field>
+          <Form.Field>
+            <label>Příjmení</label>
+            <input placeholder="Příjmení" />
+            {/*  <RegisterformItem
+              onChange={(value) => {
+                handleChange('kontaktniTelefon', value);
+              }}
+              name="Kontantní telefon"
+              itemName="kontaktniTelefon"
+              type="tel"
+            /> */}
+          </Form.Field>
+          <Form.Field>
+            {' '}
+            <label>Email</label>
+            <input placeholder="Email" />
+            {/*  <RegisterformItem
+              onChange={(value) => {
+                handleChange('email', value);
+              }}
+              name="e-mail"
+              itemName="email"
+              type="email"
+            /> */}
+          </Form.Field>
+          <Form.Field>
+            <label>Pracovní pozice</label>
+            <input placeholder="Pracovní pozice" />
+            {/* <RegisterformItem
+              onChange={(value) => {
+                handleChange('pracovniPozice', value);
+              }}
+              name="Pracovní pozice"
+              itemName="pracovniPozice"
+              type="text"
+            /> */}
+          </Form.Field>
+          <Form.Field>
+          <label>Společnost</label>
+            <input placeholder="Společnost" />
+            {/*  <RegisterformItem
+              onChange={(value) => {
+                handleChange('nazevFirmy', value);
+              }}
+              name="Název firmy"
+              itemName="nazevFirmy"
+              type="text"
+            /> */}
+          </Form.Field>
           <div className="souhlas">
-            <input required type="checkbox" value="true" name="udaje" />{' '}
-            Souhlasím se zpracováním údajů dle Zásad zpracování osobních údajů
-            společnosti FBE, s.r.o
-            <br />
-            <input type="checkbox" value="true" name="newsletter" /> Souhlasím
-            se zasíláním Newsletteru společnosti FBE, s.r.o 1xměsíčně
-            <br />
+            <Form.Field>
+              <Checkbox
+                value="true"
+                name="udaje"
+                label="Souhlasím se zpracováním údajů dle Zásad zpracování osobních údajů
+            společnosti FBE, s.r.o"
+              />
+              <Checkbox
+                value="true"
+                name="newsletter"
+                label="Souhlasím
+            se zasíláním Newsletteru společnosti FBE, s.r.o 1xměsíčně"
+              />
+            </Form.Field>
           </div>
 
           <div className="tlacitka">
@@ -124,7 +150,7 @@ export const RegisterForm = () => {
             </Link>
           </div>
         </div>
-      </form>
+      </Form>
     </>
   );
 };
