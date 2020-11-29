@@ -1,34 +1,43 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Button, Menu } from 'semantic-ui-react';
 import { CurrentUser } from '../currentUser';
 import { db } from '../db.jsx';
 
-
 const RegisterformItem = (props) => {
   const [value, setValue] = useState('');
-  const handleChange=(e)=>{
+  const handleChange = (e) => {
     setValue(e.target.value);
     props.onChange(e.target.value);
-  }
+    t;
+  };
 
   return (
     <>
       <label> {props.name}: </label>
-      <input value={value} onChange={handleChange} required type={props.type} name={props.itemName} type="string" />
+      <input
+        value={value}
+        onChange={handleChange}
+        required
+        type={props.type}
+        name={props.itemName}
+        type="string"
+      />
       <br />
     </>
   );
 };
 
 export const RegisterForm = () => {
-  const[formstate, setFormState]=useState('');
+  const [formstate, setFormState] = useState('');
 
-
-  const handleChange=(name,value)=>{
-  console.log(name,value)
-}
+  const handleChange = (name, value) => {
+    console.log(name, value);
+  };
 
   return (
     <>
+      <Menu />
       <div className="registracniFormular">Registrační formulář</div>
       <form
         onSubmit={(event) => {
@@ -56,27 +65,43 @@ export const RegisterForm = () => {
         }}
       >
         <div className="registrationForm">
-          <RegisterformItem onChange={(value)=>{handleChange ('jmenoPrijmeni',value)}}
+          <RegisterformItem
+            onChange={(value) => {
+              handleChange('jmenoPrijmeni', value);
+            }}
             name="Jméno a příjmení"
             itemName="jmenoPrijmeni"
             type="text"
           />
-          <RegisterformItem onChange={(value)=>{handleChange ('kontaktniTelefon',value)}}
+          <RegisterformItem
+            onChange={(value) => {
+              handleChange('kontaktniTelefon', value);
+            }}
             name="Kontantní telefon"
             itemName="kontaktniTelefon"
             type="tel"
           />
-          <RegisterformItem onChange={(value)=>{handleChange ('email',value)}}
-          name="e-mail" 
-          itemName="email"
-           type="email" />
-         
-          <RegisterformItem onChange={(value)=>{handleChange ('pracovniPozice',value)}}
+          <RegisterformItem
+            onChange={(value) => {
+              handleChange('email', value);
+            }}
+            name="e-mail"
+            itemName="email"
+            type="email"
+          />
+
+          <RegisterformItem
+            onChange={(value) => {
+              handleChange('pracovniPozice', value);
+            }}
             name="Pracovní pozice"
             itemName="pracovniPozice"
             type="text"
           />
-          <RegisterformItem onChange={(value)=>{handleChange ('nazevFirmy',value)}}
+          <RegisterformItem
+            onChange={(value) => {
+              handleChange('nazevFirmy', value);
+            }}
             name="Název firmy"
             itemName="nazevFirmy"
             type="text"
@@ -93,10 +118,10 @@ export const RegisterForm = () => {
           </div>
 
           <div className="tlacitka">
-            <button type="submit">
-              Uložit data a pokračovat vyplňováním dotazníku
-            </button>{' '}
-            <br />
+            <Link to="/vysledky">
+              <Button type="submit">Uložit a pokračovat na výsledky</Button>
+              <br />
+            </Link>
           </div>
         </div>
       </form>

@@ -39,10 +39,12 @@ const App = () => {
           <Route path="/vysledky">
             <FinalPage surveyScore={surveyScore} />
           </Route>
+          <Route path="/registrace">
+            <RegisterForm />
+          </Route>
           <Route path="/" component={Homepage} />
         </Switch>
       </BrowserRouter>
-      <RegisterForm />
     </>
   );
 };
