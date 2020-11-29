@@ -17,13 +17,15 @@ const Question = (props) => {
     props.onValueChange(value);
   };
 
+  const isError = !props.isCategoryValid && !value;
+
   return (
     <>
       <div className="question">
         <div>{question}</div>
         <div>
           {shuffled.map((answer) => (
-            <Form.Field key={answer.text}>
+            <Form.Field key={answer.text} error={isError}>
               {/*  <div>{answer.number}</div>
               <div>{answer.text}</div>
               <button onClick={() => setMarked(answer.number)}>Vybrat</button> */}

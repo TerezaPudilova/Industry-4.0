@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { useParams, Redirect, useRouteMatch, Link } from 'react-router-dom';
-import { Form } from 'semantic-ui-react';
+import { Button, Form, Message } from 'semantic-ui-react';
 import Category from '../category/Category.jsx';
 import CategorySwitcher from '../categorySwitcher/categorySwitcher.jsx';
 
 const Survey = (props) => {
+  const [isCategoryValid, setIsCategoryValid] = useState(true);
   const categories = props.categories;
   const codeNames = categories.map((category) => category.codeName);
   const { categoryCodeName } = useParams();
-  console.log(categoryCodeName);
+  const categoryIndex = codeNames.indexOf(categoryCodeName);
 
   const handleValueChange = (value, questionIndex) => {
     const copySurveyScore = [...props.surveyScore];
@@ -19,11 +20,28 @@ const Survey = (props) => {
     props.onChange(copySurveyScore);
   };
 
-  const categoryIndex = codeNames.indexOf(categoryCodeName);
+  const validate = () => {
+    const currentCategoryScore = props.surveyScore[categoryIndex];
+    const unansweredQuestions = currentCategoryScore.filter((question) => {
+      return question === 0;
+    });
+
+    return unansweredQuestions.length === 0;
+  };
 
   if (categoryIndex === -1) {
     return <Redirect to="/dotaznik/MSA" />;
   }
+
+  const onNextHandler = (e) => {
+    const isValid = validate();
+    if (isValid) {
+      setIsCategoryValid(true);
+    } else {
+      e.preventDefault();
+      setIsCategoryValid(false);
+    }
+  };
 
   const previousUrl = `/dotaznik/${codeNames[categoryIndex - 1]}`;
   const nextUrl = `/dotaznik/${codeNames[categoryIndex + 1]}`;
@@ -32,7 +50,7 @@ const Survey = (props) => {
     categories[0];
 
   return (
-    <Form>
+    <Form error={!isCategoryValid}>
       <CategorySwitcher
         categories={categories}
         categoryId={Math.max(codeNames.indexOf(categoryCodeName), 0)}
@@ -43,14 +61,24 @@ const Survey = (props) => {
           description={category.description}
           questions={category.questions}
           onValueChange={handleValueChange}
+          isCategoryValid={isCategoryValid}
         />
       </div>
       <Link to={previousUrl}>
-        <button disabled={categoryIndex === 0}>Předchozí</button>
+        <Button disabled={categoryIndex === 0}>Předchozí</Button>
       </Link>
       <Link to={nextUrl}>
-        <button disabled={categoryIndex === 6}>Další</button>
+        <Button onClick={onNextHandler} disabled={categoryIndex === 6}>
+          Další
+        </Button>
       </Link>
+      {!isCategoryValid && (
+        <Message
+          error
+          header="Action Forbidden"
+          content="Formulář není validní"
+        />
+      )}
     </Form>
   );
 };

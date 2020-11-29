@@ -19,9 +19,9 @@ const Category = (props) => {
               question={question.question}
               answers={question.answers}
               onValueChange={(value) => props.onValueChange(value, i)}
-              required
               type={props.type}
               name={props.itemName}
+              isCategoryValid={props.isCategoryValid}
             />
           </div>
         ))}
