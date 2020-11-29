@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams, Redirect, useRouteMatch, Link } from 'react-router-dom';
 import { Button, Form, Message } from 'semantic-ui-react';
 import Category from '../category/Category.jsx';
-import CategorySwitcher from '../categorySwitcher/categorySwitcher.jsx';
+import CategorySwitcher from '../categorySwitcher/CategorySwitcher.jsx';
 
 const Survey = (props) => {
   const [isCategoryValid, setIsCategoryValid] = useState(true);
