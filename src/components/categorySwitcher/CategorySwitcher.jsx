@@ -42,7 +42,7 @@ const CategorySwitcher = (props) => {
           <Link to={`/dotaznik/${category.codeName}`}>
             <CategoryNumber isActive={i === props.categoryId}>
               {i + 1}.
-            </CategoryNumber>{' '}
+            </CategoryNumber>
             <CategoryName>{category.name}</CategoryName>
           </Link>
         </ListItem>
