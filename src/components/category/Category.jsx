@@ -24,6 +24,7 @@ const Category = (props) => {
               type={props.type}
               name={props.itemName}
               isCategoryValid={props.isCategoryValid}
+              value={props.currentCategoryScore[i]}
             />
           </div>
         ))}

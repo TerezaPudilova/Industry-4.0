@@ -11,6 +11,8 @@ const Survey = (props) => {
   const { categoryCodeName } = useParams();
   const categoryIndex = codeNames.indexOf(categoryCodeName);
 
+  const currentCategoryScore = props.surveyScore[categoryIndex];
+
   const isLastCategory = categoryIndex === 6;
 
   const handleValueChange = (value, questionIndex) => {
@@ -23,7 +25,6 @@ const Survey = (props) => {
   };
 
   const validate = () => {
-    const currentCategoryScore = props.surveyScore[categoryIndex];
     const unansweredQuestions = currentCategoryScore.filter((question) => {
       return question === 0;
     });
@@ -61,6 +62,7 @@ const Survey = (props) => {
         <Category
           name={category.name}
           description={category.description}
+          currentCategoryScore={currentCategoryScore}
           questions={category.questions}
           onValueChange={handleValueChange}
           isCategoryValid={isCategoryValid}

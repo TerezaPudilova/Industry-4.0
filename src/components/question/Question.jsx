@@ -4,7 +4,6 @@ import { shuffle } from '../../shuffle';
 import { QuestionTitle2} from '../../styles/Container';
 
 const Question = (props) => {
-  const [value, setValue] = useState();
   const [shuffled, setShuffled] = useState([]);
 
   useEffect(() => {
@@ -37,9 +36,8 @@ const Question = (props) => {
                 label={answer.text + ' ' + answer.number}
                 value={answer.number}
                 name={question}
-                checked={value === answer.number}
+                checked={props.value === answer.number}
                 onClick={() => {
-                  setValue(answer.number);
                   handleChange(answer.number);
                 }}
               />
