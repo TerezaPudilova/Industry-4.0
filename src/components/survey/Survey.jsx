@@ -72,7 +72,7 @@ const Survey = (props) => {
         <Button disabled={categoryIndex === 0}>Předchozí</Button>
       </Link>
       {isLastCategory ? (
-        <Link to="/vysledky">
+        <Link to="/registrace">
           <Button onClick={onNextHandler}>Vyhodnotit</Button>
         </Link>
       ) : (
