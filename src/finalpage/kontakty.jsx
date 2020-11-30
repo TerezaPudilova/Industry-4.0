@@ -1,22 +1,29 @@
 import React from 'react';
+import styled from '@emotion/styled';
+import {colors} from '../styles/variables.js';
+import { Container, FullWidthContainer, Contacts, Title2 } from '../styles/Container';
 
 
 
 export const Kontakty =()=>{
       return (
-  <>
-  <div className="prehledKontaktu">Pro doplnění informací a případnou konzultaci kontaktujte naše specialisty</div>
+        <FullWidthContainer bgColor={colors.darkBlue}>
+        <Container>
+       
+    <Title2>Pro doplnění informací a případnou konzultaci kontaktujte naše specialisty</Title2>
 
-        <div className="kontakty">
-            <div>Karol Horváth</div>
+    <Contacts>
+            <Title2>Karol Horváth</Title2>
             <div>Email:karol.horvath@fbe.sk</div>
-            <img src="img/horvath.jpg" alt="horvath"/>
-
-            <div>Tomáš Marek</div>
+            <img src="img/horvath.png" alt="horvath"/>
+          
+            <Title2>Tomáš Marek</Title2>
             <div>Email:tomas.marek@fbe.cz</div>
             <img src="img/marek.jpg" alt="marek"/>
-         </div>
-        </>
+         </Contacts>
+      
+           </Container>
+           </FullWidthContainer>
       );
     }
  

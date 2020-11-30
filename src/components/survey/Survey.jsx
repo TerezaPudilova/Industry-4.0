@@ -3,6 +3,7 @@ import { useParams, Redirect, useRouteMatch, Link } from 'react-router-dom';
 import { Button, Form, Message } from 'semantic-ui-react';
 import Category from '../category/Category.jsx';
 import CategorySwitcher from '../categorySwitcher/CategorySwitcher.jsx';
+import { QuestionnaireButton} from '../../styles/Container';
 
 const Survey = (props) => {
   const [isCategoryValid, setIsCategoryValid] = useState(true);
@@ -68,8 +69,9 @@ const Survey = (props) => {
           isCategoryValid={isCategoryValid}
         />
       </div>
-      <Link to={previousUrl}>
-        <Button disabled={categoryIndex === 0}>Předchozí</Button>
+      <QuestionnaireButton>
+            <Link to={previousUrl}>
+               <Button disabled={categoryIndex === 0}>Předchozí</Button>
       </Link>
       {isLastCategory ? (
         <Link to="/registrace">
@@ -81,9 +83,8 @@ const Survey = (props) => {
             Další
           </Button>
         </Link>
-      )}
-
-      {!isCategoryValid && (
+      )}</QuestionnaireButton>
+           {!isCategoryValid && (
         <Message
           error
           header="Action Forbidden"

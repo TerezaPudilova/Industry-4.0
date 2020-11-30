@@ -48,4 +48,27 @@ export const QuestionTitle2 = styled.div`
   font-size: 15px;
   font-weight:bold;
 padding: 25px;
+margin-top:25px;
+`;
+
+export const QuestionData = styled.div`
+height: 25px;
+`;
+
+export const QuestionnaireButton = styled.div`
+display: flex;
+margin: 35px;
+`;
+
+export const TextFooter = styled.div`
+font-style: italic;
+color:'#003277';
+text-align: center;
+padding: 25px;
+`;
+
+export const Contacts = styled.div`
+display: flex;
+background-color:'#003277';
+padding:25px;
 `;

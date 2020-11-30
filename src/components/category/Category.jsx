@@ -1,7 +1,7 @@
 import React from 'react';
 import Question from '../question/Question.jsx';
 import { useState } from 'react';
-import { QuestionTitle1} from '../../styles/Container';
+import { QuestionTitle1, Container} from '../../styles/Container';
 
 const Category = (props) => {
   const name = props.name;
@@ -10,6 +10,7 @@ const Category = (props) => {
 
   return (
     <>
+    <Container>
       <QuestionTitle1>{name}</QuestionTitle1>
       <div>{description}</div>
       <div>
@@ -29,6 +30,7 @@ const Category = (props) => {
           </div>
         ))}
       </div>
+      </Container>
     </>
   );
 };
