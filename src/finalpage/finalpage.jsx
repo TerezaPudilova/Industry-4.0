@@ -11,22 +11,30 @@ import {
   Text1,
 } from '../styles/Container';
 import { TableExampleWarningShorthand } from './tableresult';
+import './reccomendation.jsx';
+import { getRecomendation } from './reccomendation.jsx';
 
 const categoryLabels = [
-  'Bezpečnost a standardizace',
   'Měřící systémy',
   'Lean systémy',
+  'Bezpečnost a standardizace',
   'Hodnotové toky',
   'Interakce a komunikace',
-  'Flexibilita technologií',
   'Plánování a SCM',
+  'Flexibilita technologií'
 ];
+
+const score = [17, 21, 10, 15, 14, 12, 19];
 
 const tableResultData = [''];
 
 const TableFillData = () => {
   for (let i = 0; i < categoryLabels.length; i++) {
-    tableResultData[i]={ name: categoryLabels[i], status: '', notes: '' };
+    tableResultData[i] = {
+      name: categoryLabels[i],
+      status: score[i].toString(),
+      notes: getRecomendation(i, score[i]),
+    };
     console.log(i);
   }
   console.log(tableResultData);

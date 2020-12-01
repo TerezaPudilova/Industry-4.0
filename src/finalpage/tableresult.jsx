@@ -21,12 +21,12 @@ const renderBodyRow = ({ name, status, notes }, i) => ({
   ],
 })
 
-export const TableExampleWarningShorthand = (tableResult) => (
+export const TableExampleWarningShorthand = (props) => (
   <Table
     celled
     headerRow={headerRow}
     renderBodyRow={renderBodyRow}
-    tableData={tableResult}
+    tableData={props.tableResult}
   />
 )
 
