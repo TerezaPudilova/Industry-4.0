@@ -35,12 +35,12 @@ margin-top: 10px;
 `;
 
 const postup=[
-  'Na začátku vás čeká jednoduchá registrace',
-  'Samohodnocení vám zabere cca 30-60 minut',
-  'Budete vyplňovat 7 oddílů po 7 otázkách',
-  'Pro obdržení Závěrečné zprávy je nutné odpověděť na všechny otázky',
-  'K již zodpovězeným otázkám je možné se vrátit a případně upravit hodnocení',
-  'Dotazník je nutné vyplnit najednou, průběžné výsledky se neukládají'
+  'Samohodnotící dotazník obsahuje 49 otázek. Je rozčleněn na 7 různých oblastí po 7 otázkách.',
+  'V každé otázce je výběr ze tří možných odpovědí. Vyberte jenom jednu, která nejvíce charakterizuje úroveň vaší firmy.',
+  'Přibližný čas na zpracování celého dotazníku a vygenerování Závěrečné zprávy je cca 45-60 minut.',
+  'Dotazník je nutné vyplnit najednou, průběžné výsledky se neukládají. Vyčleňte si prosím na to vhodný čas.',
+  'Pro obdržení Závěrečné zprávy je potřeba zodpovědět všechny otázky a v závěru se zaregistrovat.',
+  'Závěrečnou zprávu je možné zaslat e-mailem na vámi uvedenou adresu ve formě pdf, případně ihned vytisknout.'
 ];
 
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Grid } from 'semantic-ui-react';
 import logo from '../img/logo.png';
 import { Wrapper } from './menu.styles';
-import { Container } from '../styles/Container';
+import { Container, LinksMenu, LinksItem } from '../styles/Container';
 
 export const Menu = () => {
   return (
@@ -12,28 +12,30 @@ export const Menu = () => {
         <Container>
           <Grid>
             <Grid.Row>
-              <Grid.Column width={2}>
+              <Grid.Column width={2} >
                 <div className="logoFBE">
-                  <Link className="link" to="/">
+                  <Link to="/">
                     <img src={logo} alt="logoFBE" width="150" height="60" />
                   </Link>
                 </div>
-              </Grid.Column>
-              <Grid.Column width={14}>
-                <div className="links">
-                  <Link className="link" to="/dotaznik/:categoryCodeName">
-                    Questionnaire
+              </Grid.Column >
+              <Grid.Column width={10} >
+                <LinksMenu>
+                <LinksItem>
+                  <Link to="/dotaznik/:categoryCodeName">
+                    Dotazník
                   </Link>
-                  <Link className="link" to="/vysledky">
-                    Finalpage
+                  </LinksItem>
+                  <Link to="/vysledky">
+                    Výslední správa
                   </Link>
-                  <a className="link" href="#">
+                  <LinksItem href="#">
                     FBE Praha
-                  </a>
-                  <a className="link" href="#">
+                  </LinksItem>
+                  <a href="#">
                     FBE Bratislava
                   </a>
-                </div>
+                </LinksMenu>
               </Grid.Column>
             </Grid.Row>
           </Grid>

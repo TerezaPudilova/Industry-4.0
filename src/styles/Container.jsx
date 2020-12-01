@@ -69,6 +69,22 @@ padding: 25px;
 
 export const Contacts = styled.div`
 display: flex;
-background-color:'#003277';
+padding:25px;
+`;
+
+export const ContactsText = styled.div`
+display: block;
+padding:25px;
+`;
+
+export const LinksMenu = styled.div`
+padding:25px;
+font-size: 15px;
+font-weight:bold;
+text-transform: uppercase;
+color: '#003277'
+`;
+
+export const LinksItem = styled.a`
 padding:25px;
 `;
