@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { render } from 'react-dom';
 import { Kontakty } from './kontakty.jsx';
 import { Menu } from '../components/menu.jsx';
@@ -21,26 +21,29 @@ const categoryLabels = [
   'Hodnotové toky',
   'Interakce a komunikace',
   'Plánování a SCM',
-  'Flexibilita technologií'
+  'Flexibilita technologií',
 ];
 
-const score = [17, 21, 10, 15, 14, 12, 19];
-
-const tableResultData = [''];
-
-const TableFillData = () => {
+const tableFillData = (props) => {
+  const [tableResultData, setTableResultData] = useState([]);
+  const categoryScore = props.surveyScore.map((category) =>
+    category.reduce((agg, curr) => agg + curr, 0));
+  let resultScore = [7];
   for (let i = 0; i < categoryLabels.length; i++) {
-    tableResultData[i] = {
+    resultScore[i] = {
       name: categoryLabels[i],
-      status: score[i].toString(),
-      notes: getRecomendation(i, score[i]),
+      status: categoryScore[i].toString(),
+      notes: getRecomendation(i, categoryScore[i]),
     };
-    console.log(i);
   }
-  console.log(tableResultData);
+//  setTableResultData(result => [...result, resultScore]);
+  console.log(resultScore);
+  return resultScore;
 };
 
 export const FinalPage = (props) => {
+  console.log(1);
+
   const data = {
     labels: categoryLabels,
     datasets: [
@@ -52,18 +55,13 @@ export const FinalPage = (props) => {
         pointBorderColor: '#c46a36',
         pointHoverBackgroundColor: '#fff',
         pointHoverBorderColor: 'rgba(179,181,198,1)',
-        data: props.surveyScore.map(
-          (category) =>
-            category.reduce(
-              (agg, curr) => (agg + curr === 0 ? 0 : 4 - curr),
-              0,
-            ) / 7,
+        data: props.surveyScore.map((category) =>
+          category.reduce((agg, curr) => agg + curr, 0),
         ),
       },
     ],
   };
-
-  TableFillData();
+  
 
   return (
     <>
@@ -82,13 +80,11 @@ export const FinalPage = (props) => {
             zprávu je možné ihned vytisknout, nebo vygenerovat ve formátu pdf a
             zaslat na vaší emailovou adresu zadanou při registraci.{' '}
           </p>
-
           <Title2>
             <h1>
               Návod na čtení výsledků dosáhnutých v jednotlivých oblastech
             </h1>
           </Title2>
-
           <Text1>
             <h1>21-18 bodů</h1>
             <p>
@@ -111,12 +107,10 @@ export const FinalPage = (props) => {
               změny směrem k celkové optimalizaci.
             </p>
           </Text1>
-
           <Title2>
             <h1>Výsledky vašeho samohodnocení v jednotlivých oblastech:</h1>
           </Title2>
-
-          <TableExampleWarningShorthand tableResult={tableResultData} />
+          <TableExampleWarningShorthand tableResult={tableFillData(props)} />
         </Container>
       </FullWidthContainer>
 
