@@ -62,7 +62,10 @@ export const FinalPage = (props) => {
     ],
   };
   
+  const categoryScore = props.surveyScore.map((category) =>
+  category.reduce((agg, curr) => agg + curr, 0));
 
+  const resultScore = categoryScore.reduce((agg, curr) => agg + curr, 0) / 7;
   return (
     <>
       <Menu />
@@ -70,7 +73,7 @@ export const FinalPage = (props) => {
         <Container>
           <Title1>
             <h1>
-              Vaše celkové skóre v auditu připravenosti na Industry 4.0 je
+              Vaše celkové skóre v auditu připravenosti na Industry 4.0 je {resultScore}
             </h1>
           </Title1>
           <p>
@@ -110,7 +113,7 @@ export const FinalPage = (props) => {
           <Title2>
             <h1>Výsledky vašeho samohodnocení v jednotlivých oblastech:</h1>
           </Title2>
-          <TableExampleWarningShorthand tableResult={tableFillData(props)} />
+         <TableExampleWarningShorthand tableResult={tableFillData(props)} />
         </Container>
       </FullWidthContainer>
 

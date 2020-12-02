@@ -25,7 +25,8 @@ export const Title1 = styled.h1`
   padding: 25px;
   width: 720px;
   line-height: 1.6em;
-  color: ${colors.darkBlue};
+  color: ${(props) =>
+    props.bgColor === colors.darkBlue ? 'white' : 'inherit'};
 `;
 
 export const Title2 = styled.h2`
@@ -47,7 +48,7 @@ export const Title2Left = styled.h2`
 
 export const Text1 = styled.p`
   font-size: 16px;
-  text-align: center;
+  text-align: justify;
   padding: 25px;
   line-height: 1.6em;
   width: 800px;
@@ -76,11 +77,19 @@ export const QuestionTitle2 = styled.div`
   font-weight: bold;
   padding: 25px;
   margin-top: 25px;
+  text-align: justify;
 `;
 
 export const QuestionData = styled.div`
+display: flex;
   height: 25px;
-`;
+  text-align: justify;
+  align-items: center;
+  background-color: #f5f3f3;
+  height: 50px;
+  padding: 0 0 0 10px;
+  border-radius: 10px;
+    `;
 
 export const QuestionnaireButton = styled.div`
   display: flex;
@@ -101,6 +110,7 @@ export const Contacts = styled.div`
 
 export const ContactsText = styled.div`
   display: block;
+  text-align: justify;
   padding: 25px;
 `;
 
@@ -131,4 +141,5 @@ export const ContainerIndustry = styled.div`
   padding-top: 80px;
   font-family: 'Roboto';
   text-align: -webkit-center;
-`
+`;
+

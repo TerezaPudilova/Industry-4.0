@@ -14,17 +14,17 @@ const renderBodyRow = ({ name, status, notes }, i) => ({
   warning: !!(status && status.match('Requires Action')),
   cells: [
     name || 'No name specified',
-    status ? { key: 'status', icon: 'attention', content: status } : 'Unknown',
+    status ? { key: 'status', icon: '', content: status } : 'Unknown',
     notes
-      ? { key: 'notes', icon: 'attention', content: notes, warning: true }
+      ? { key: 'notes', icon: '', content: notes, warning: true }
       : 'None',
   ],
 })
 
 export const TableExampleWarningShorthand = (props) => (
   <Table
-    celled
-    headerRow={headerRow}
+      celled
+headerRow={headerRow}
     renderBodyRow={renderBodyRow}
     tableData={props.tableResult}
   />
