@@ -23,10 +23,11 @@ export const Title1 = styled.h1`
   text-transform: uppercase;
   text-align: center;
   padding: 25px;
-  width: 720px;
+  width: 640px;
   line-height: 1.6em;
   color: ${(props) =>
     props.bgColor === colors.darkBlue ? 'white' : 'inherit'};
+  margin: auto;
 `;
 
 export const Title2 = styled.h2`
@@ -78,10 +79,11 @@ export const QuestionTitle2 = styled.div`
   padding: 25px;
   margin-top: 25px;
   text-align: justify;
+  max-width: 640px;
 `;
 
 export const QuestionData = styled.div`
-display: flex;
+  display: flex;
   height: 25px;
   text-align: justify;
   align-items: center;
@@ -89,11 +91,14 @@ display: flex;
   height: 50px;
   padding: 0 0 0 10px;
   border-radius: 10px;
-    `;
+  max-width: 640px;
+`;
 
 export const QuestionnaireButton = styled.div`
-  display: flex;
-  margin: 35px;
+  max-width: 640px;
+  margin: auto;
+  padding: 30px;
+  text-align: center;
 `;
 
 export const TextFooter = styled.div`
@@ -114,32 +119,33 @@ export const ContactsText = styled.div`
   padding: 25px;
 `;
 
-
 export const Buttons = styled.div`
   text-align: center;
   margin: 32px;
 `;
 
 export const Roboti = styled.div`
-  width: 400px;
-  height: 250px;
- /*  background-image: url(${roboti}); */
-  background-size: contain;  
+  background-size: contain;
   background-repeat: no-repeat;
-
 `;
 
 export const RobotiWrapper = styled.div`
   width: 100%;
   text-align: -webkit-center;
-  margin-bottom: -160px;
+  margin-bottom: -220px;
+  padding-bottom: 100px;
 `;
 
 export const ContainerIndustry = styled.div`
- max-width: 1280px;
+  max-width: 1280px;
   margin: 0 auto;
   padding-top: 80px;
   font-family: 'Roboto';
   text-align: -webkit-center;
 `;
 
+export const RegistryForm = styled.div`
+  max-width: 640px;
+  margin: auto;
+  text-align: center;
+`;

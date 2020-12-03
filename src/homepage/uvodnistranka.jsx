@@ -46,7 +46,7 @@ export const UvodniStranka = () => {
         </Container>
         <RobotiWrapper>
           <Roboti>
-          <img src={roboti} width="400px" alt="graf" />
+          <img src={roboti} width="600px" alt="graf" />
           </Roboti>
         </RobotiWrapper>
         <FullWidthContainer>

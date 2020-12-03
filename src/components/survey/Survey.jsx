@@ -3,7 +3,7 @@ import { useParams, Redirect, useRouteMatch, Link } from 'react-router-dom';
 import { Button, Form, Message } from 'semantic-ui-react';
 import Category from '../category/Category.jsx';
 import CategorySwitcher from '../categorySwitcher/CategorySwitcher.jsx';
-import { QuestionnaireButton} from '../../styles/Container';
+import { QuestionnaireButton } from '../../styles/Container';
 
 const Survey = (props) => {
   const [isCategoryValid, setIsCategoryValid] = useState(true);
@@ -59,36 +59,38 @@ const Survey = (props) => {
         categories={categories}
         categoryId={Math.max(codeNames.indexOf(categoryCodeName), 0)}
       ></CategorySwitcher>
-      <div className="category">
-        <Category
-          name={category.name}
-          description={category.description}
-          currentCategoryScore={currentCategoryScore}
-          questions={category.questions}
-          onValueChange={handleValueChange}
-          isCategoryValid={isCategoryValid}
-        />
-      </div>
+
+      <Category
+        name={category.name}
+        description={category.description}
+        currentCategoryScore={currentCategoryScore}
+        questions={category.questions}
+        onValueChange={handleValueChange}
+        isCategoryValid={isCategoryValid}
+      />
+
       <QuestionnaireButton>
-            <Link to={previousUrl}>
-               <Button disabled={categoryIndex === 0}>Předchozí</Button>
-      </Link>
-      {isLastCategory ? (
-        <Link to="/registrace">
-          <Button onClick={onNextHandler}>Vyhodnotit</Button>
+        <Link to={previousUrl}>
+          <Button disabled={categoryIndex === 0}>Předchozí</Button>
         </Link>
-      ) : (
-        <Link to={nextUrl}>
-          <Button onClick={onNextHandler} disabled={categoryIndex === 6}>
-            Další
-          </Button>
-        </Link>
-      )}</QuestionnaireButton>
-           {!isCategoryValid && (
+        {isLastCategory ? (
+          <Link to="/registrace">
+            <Button onClick={onNextHandler}>Vyhodnotit</Button>
+          </Link>
+        ) : (
+          <Link to={nextUrl}>
+            <Button onClick={onNextHandler} disabled={categoryIndex === 6}>
+              Další
+            </Button>
+          </Link>
+        )}
+      </QuestionnaireButton>
+
+      {!isCategoryValid && (
         <Message
           error
-          header="Action Forbidden"
-          content="Formulář není validní"
+          header="Nelze pokračovat"
+          content="Prosím, vyplňte všechny otázky"
         />
       )}
     </Form>

@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
+import { colors } from '../styles/variables.js';
 
 export const Wrapper = styled.nav`
   background-color: white;
-  /* position: fixed; */
   padding: 16px 0;
   left: 0;
   right: 0;
@@ -15,7 +15,8 @@ export const Links = styled.div`
 `;
 
 export const LinksItem = styled.a`
-  padding: 25px;
+  padding: 16px;
+  color: ${colors.darkBlue};
 `;
 
 export const LinksMenu = styled.div`
@@ -24,7 +25,7 @@ export const LinksMenu = styled.div`
   font-size: 15px;
   font-weight: bold;
   text-transform: uppercase;
-  color: '#003277';
+  color: ${colors.darkBlue};
 `;
 
 export const Logo = styled.div`

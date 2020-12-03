@@ -27,7 +27,7 @@ export const Menu = () => {
                     </LinksItem>
                     <Link to="/vysledky">Výslední správa</Link>
                     <LinksItem href="#">FBE Praha</LinksItem>
-                    <a href="#">FBE Bratislava</a>
+                    <LinksItem href="#">FBE Bratislava</LinksItem>
                   </LinksMenu>
                 </Grid.Column>
               </Links>

@@ -19,7 +19,7 @@ const Question = (props) => {
     props.onValueChange(value);
   };
 
-  const isError = !props.isCategoryValid && !value;
+  const isError = !props.isCategoryValid && !props.value;
 
   return (
     <>

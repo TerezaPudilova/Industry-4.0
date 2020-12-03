@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Checkbox, Form, Menu } from 'semantic-ui-react';
+import { Button, Checkbox, Form} from 'semantic-ui-react';
 import { CurrentUser } from '../currentUser';
 import { db } from '../db.jsx';
+import { RegistryForm, Title1 } from '../styles/Container';
+import { Menu } from '../components/menu';
 
 /* const RegisterformItem = (props) => {
   const [value, setValue] = useState('');
@@ -38,7 +40,7 @@ export const RegisterForm = () => {
   return (
     <>
       <Menu />
-      <div className="registracniFormular">Registrační formulář</div>
+      <Title1>Registrační formulář</Title1>
       <Form
         onSubmit={(event) => {
           event.preventDefault();
@@ -64,23 +66,23 @@ export const RegisterForm = () => {
           });
         }}
       >
-        <div className="registrationForm">
-          <Form.Field>
-            <label>Jméno</label>
-            <input placeholder="Jméno" />
-            {/* <RegisterformItem */}
-            {/* onChange={(value) => {
+        <RegistryForm>
+        <Form.Field>
+          <label>Jméno</label>
+          <input placeholder="Jméno" />
+          {/* <RegisterformItem */}
+          {/* onChange={(value) => {
                 handleChange('jmenoPrijmeni', value);
               }}
               name="Jméno a příjmení"
               itemName="jmenoPrijmeni"
               type="text" */}
-            {/* /> */}
-          </Form.Field>
-          <Form.Field>
-            <label>Příjmení</label>
-            <input placeholder="Příjmení" />
-            {/*  <RegisterformItem
+          {/* /> */}
+        </Form.Field>
+        <Form.Field>
+          <label>Příjmení</label>
+          <input placeholder="Příjmení" />
+          {/*  <RegisterformItem
               onChange={(value) => {
                 handleChange('kontaktniTelefon', value);
               }}
@@ -88,12 +90,12 @@ export const RegisterForm = () => {
               itemName="kontaktniTelefon"
               type="tel"
             /> */}
-          </Form.Field>
-          <Form.Field>
-            {' '}
-            <label>Email</label>
-            <input placeholder="Email" />
-            {/*  <RegisterformItem
+        </Form.Field>
+        <Form.Field>
+          {' '}
+          <label>Email</label>
+          <input placeholder="Email" />
+          {/*  <RegisterformItem
               onChange={(value) => {
                 handleChange('email', value);
               }}
@@ -101,11 +103,11 @@ export const RegisterForm = () => {
               itemName="email"
               type="email"
             /> */}
-          </Form.Field>
-          <Form.Field>
-            <label>Pracovní pozice</label>
-            <input placeholder="Pracovní pozice" />
-            {/* <RegisterformItem
+        </Form.Field>
+        <Form.Field>
+          <label>Pracovní pozice</label>
+          <input placeholder="Pracovní pozice" />
+          {/* <RegisterformItem
               onChange={(value) => {
                 handleChange('pracovniPozice', value);
               }}
@@ -113,11 +115,11 @@ export const RegisterForm = () => {
               itemName="pracovniPozice"
               type="text"
             /> */}
-          </Form.Field>
-          <Form.Field>
+        </Form.Field>
+        <Form.Field>
           <label>Společnost</label>
-            <input placeholder="Společnost" />
-            {/*  <RegisterformItem
+          <input placeholder="Společnost" />
+          {/*  <RegisterformItem
               onChange={(value) => {
                 handleChange('nazevFirmy', value);
               }}
@@ -125,32 +127,30 @@ export const RegisterForm = () => {
               itemName="nazevFirmy"
               type="text"
             /> */}
-          </Form.Field>
-          <div className="souhlas">
-            <Form.Field>
-              <Checkbox
-                value="true"
-                name="udaje"
-                label="Souhlasím se zpracováním údajů dle Zásad zpracování osobních údajů
-            společnosti FBE, s.r.o"
-              />
-              <Checkbox
-                value="true"
-                name="newsletter"
-                label="Souhlasím
-            se zasíláním Newsletteru společnosti FBE, s.r.o 1xměsíčně"
-              />
-            </Form.Field>
-          </div>
+        </Form.Field>
 
-          <div className="tlacitka">
-            <Link to="/vysledky">
-              <Button type="submit">Uložit a pokračovat na výsledky</Button>
-              <br />
-            </Link>
-          </div>
-        </div>
+        <Form.Field>
+          <Checkbox
+            value="true"
+            name="udaje"
+            label="Souhlasím se zpracováním údajů dle Zásad zpracování osobních údajů
+            společnosti FBE, s.r.o"
+          />
+          <Checkbox
+            value="true"
+            name="newsletter"
+            label="Souhlasím
+            se zasíláním Newsletteru společnosti FBE, s.r.o 1xměsíčně"
+          />
+        </Form.Field>
+
+        <Link to="/vysledky">
+          <Button type="submit">Uložit a pokračovat na výsledky</Button>
+          <br />
+        </Link>
+        </RegistryForm>
       </Form>
+      
     </>
   );
 };
