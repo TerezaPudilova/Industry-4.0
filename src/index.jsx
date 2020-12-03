@@ -8,11 +8,12 @@ import { Formular } from './components/index.jsx';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { UvodniStranka } from './homepage/uvodnistranka.jsx';
 import { Postup } from './homepage/postup.jsx';
-import { RegisterForm } from './homepage/registerform.jsx';
+/* import { RegisterForm } from './homepage/registerform.jsx'; */
 import { FinalPage } from './finalpage/finalpage.jsx';
 import './style.css';
 import { Homepage } from './homepage/homepage.jsx';
 import { Button } from 'semantic-ui-react';
+import { ValidationSchemaExample } from './homepage/registerform.jsx';
 
 const App = () => {
   const [surveyScore, setSurveyScore] = useState(
@@ -40,7 +41,8 @@ const App = () => {
             <FinalPage surveyScore={surveyScore} />
           </Route>
           <Route path="/registrace">
-            <RegisterForm />
+            {/* <RegisterForm /> */}
+            <ValidationSchemaExample/>
           </Route>
           <Route path="/" component={Homepage} />
         </Switch>
