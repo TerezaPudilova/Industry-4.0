@@ -51,6 +51,7 @@ export const FinalPage = (props) => {
         backgroundColor: 'rgba(179,181,198,0.2)',
         borderColor: '#c46a36',
         borderWidth: 5,
+        //drawDashedLine: ([15, 3, 3, 3]),
         pointBackgroundColor: 'rgba(179,181,198,1)',
         pointBorderColor: '#c46a36',
         pointHoverBackgroundColor: '#fff',
@@ -73,7 +74,7 @@ export const FinalPage = (props) => {
         <Container>
           <Title1>
             <h1>
-              Vaše celkové skóre v auditu připravenosti na Industry 4.0 je {resultScore}
+              Vaše celkové skóre v auditu připravenosti na Industry 4.0 je {Math.round(resultScore)}
             </h1>
           </Title1>
           <p>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Table } from 'semantic-ui-react'
+import { Table} from 'semantic-ui-react'
 
 const tableData = [
   { name: 'Jimmy', status: 'Requires Action', notes: undefined },
@@ -23,8 +23,8 @@ const renderBodyRow = ({ name, status, notes }, i) => ({
 
 export const TableExampleWarningShorthand = (props) => (
   <Table
-      celled
-headerRow={headerRow}
+    celled
+    headerRow={headerRow}
     renderBodyRow={renderBodyRow}
     tableData={props.tableResult}
   />

@@ -65,8 +65,10 @@ export const getRecomendation = (categoryId, score) => {
     returnReccomendation = Reccomendation[categoryId].topScore;
   } else if (score <= 17 && score >= 14) {
     returnReccomendation = Reccomendation[categoryId].middleScore;
-  } else {
+  } else if (score <= 13 && score >= 7){
     returnReccomendation = Reccomendation[categoryId].poorScore;
+  } else if (score <= 6 && score >= 0){
+  returnReccomendation = 'Výsledky nejsou k dispozici. Nemáte vyplněný dotazník.';
   }
   return returnReccomendation;
 };

@@ -149,3 +149,4 @@ export const RegistryForm = styled.div`
   margin: auto;
   text-align: center;
 `;
+
