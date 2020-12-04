@@ -252,7 +252,8 @@ const SignupSchema = Yup.object().shape({
 
 export const ValidationSchemaExample = () => (
   <div>
-    <h1>Signup</h1>
+    <h1>Registrace</h1>
+    <p>Pro zorbazení výsledků se prosím registrujte</p>
     <Formik
       initialValues={{
         firstName: '',
@@ -301,29 +302,152 @@ export const ValidationSchemaExample = () => (
             {errors.firstName && touched.firstName ? (
               <div>{errors.firstName}</div>
             ) : null}
-            <Field name="lastName" />
+            <Field
+              name="lastName"
+              render={({ field }) => {
+                return (
+                  <FormSemantic.Field>
+                    <FormSemantic.Input
+                      {...field}
+                      error={
+                        errors.lastName && {
+                          content: errors.lastName,
+                          pointing: 'below',
+                        }
+                      }
+                      label="Příjmení"
+                      placeholder="Příjmení"
+                      fluid
+                    />
+                  </FormSemantic.Field>
+                );
+              }}
+            />
             {errors.lastName && touched.lastName ? (
               <div>{errors.lastName}</div>
             ) : null}
-            <Field name="email" type="email" />
+            <Field
+              name="email"
+              render={({ field }) => {
+                return (
+                  <FormSemantic.Field>
+                    <FormSemantic.Input
+                      {...field}
+                      error={
+                        errors.email && {
+                          content: errors.email,
+                          pointing: 'below',
+                        }
+                      }
+                      label="Email"
+                      placeholder="Email"
+                      fluid
+                    />
+                  </FormSemantic.Field>
+                );
+              }}
+            />
             {errors.email && touched.email ? <div>{errors.email}</div> : null}
-            <Field name="function" />
+            <Field
+              name="function"
+              render={({ field }) => {
+                return (
+                  <FormSemantic.Field>
+                    <FormSemantic.Input
+                      {...field}
+                      error={
+                        errors.function && {
+                          content: errors.function,
+                          pointing: 'below',
+                        }
+                      }
+                      label="Funkce"
+                      placeholder="Funkce"
+                      fluid
+                    />
+                  </FormSemantic.Field>
+                );
+              }}
+            />
             {errors.function && touched.function ? (
               <div>{errors.function}</div>
             ) : null}
-            <Field name="company" />
+            <Field
+              name="company"
+              render={({ field }) => {
+                return (
+                  <FormSemantic.Field>
+                    <FormSemantic.Input
+                      {...field}
+                      error={
+                        errors.company && {
+                          content: errors.company,
+                          pointing: 'below',
+                        }
+                      }
+                      label="Společnost"
+                      placeholder="Společnost"
+                      fluid
+                    />
+                  </FormSemantic.Field>
+                );
+              }}
+            />
             {errors.company && touched.company ? (
               <div>{errors.company}</div>
             ) : null}
-            <Field name="souhlasUdaje" type="checkbox" />
+            <Field
+              name="souhlasUdaje"
+              render={({ field }) => {
+                return (
+                  <FormSemantic.Field>
+                    <FormSemantic.Checkbox
+                      {...field}
+                      error={
+                        errors.souhlasUdaje && {
+                          content: errors.souhlasUdaje,
+                          pointing: 'below',
+                        }
+                      }
+                      label="Souhlasím se zpracováním údajů dle Zásad zpracování osobních údajů
+                     společnosti FBE, s.r.o"
+                      fluid
+                    />
+                  </FormSemantic.Field>
+                );
+              }}
+            />
             {errors.souhlasUdaje && touched.souhlasUdaje ? (
               <div>{errors.souhlasUdaje}</div>
             ) : null}
-            <Field name="souhlasNewsletter" type="checkbox" />
+            <Field
+              name="souhlasNewsletter"
+              render={({ field }) => {
+                return (
+                  <FormSemantic.Field>
+                    <FormSemantic.Checkbox
+                      {...field}
+                      error={
+                        errors.souhlasNewsletter && {
+                          content: errors.souhlasNewsletter,
+                          pointing: 'below',
+                        }
+                      }
+                      label="Souhlasím
+                     se zasíláním Newsletteru společnosti FBE, s.r.o 1xměsíčně"
+                      fluid
+                    />
+                  </FormSemantic.Field>
+                );
+              }}
+            />
             {errors.souhlasNewsletter && touched.souhlasNewSletter ? (
               <div>{errors.souhlasNewsletter}</div>
             ) : null}
-            <button type="submit">Submit</button>
+            <Link to="/vysledky">
+              <Button type="submit">Uložit a pokračovat na výsledky</Button>
+              <br />
+            </Link>
           </FormSemantic>
         </Form>
       )}
