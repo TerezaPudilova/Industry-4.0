@@ -40,8 +40,8 @@ export const UvodniStranka = () => {
             potenciály na zlepšení.
           </Text1>
           <Buttons>
-            <Button primary>Než začnete</Button>
-            <Button secondary>Začít hned</Button>
+            
+            <Button secondary href="#beforeYouStart">Začít</Button>
           </Buttons>
         </Container>
         <RobotiWrapper>

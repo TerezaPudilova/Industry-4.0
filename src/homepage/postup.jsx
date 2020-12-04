@@ -3,6 +3,7 @@ import { Buttons, Container, FullWidthContainer, Title2 } from '../styles/Contai
 import { colors } from '../styles/variables.js';
 import styled from '@emotion/styled';
 import { Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 const List1 = styled.ul`
   display: flex;
@@ -48,7 +49,7 @@ export const Postup = () => {
     <>
       <FullWidthContainer>
         <Container>
-          <Title2>Než začnete</Title2>
+          <Title2 id="beforeYouStart">Než začnete</Title2>
           <List1>
             {postup.map((item, i) => (
               <ListNumber>
@@ -58,7 +59,9 @@ export const Postup = () => {
             ))}
           </List1>
           <Buttons>
+            <Link to="/dotaznik/MSA">
             <Button primary>Začít</Button>
+            </Link>
           </Buttons>
         </Container>
       </FullWidthContainer>

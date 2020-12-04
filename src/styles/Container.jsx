@@ -49,11 +49,11 @@ export const Title2Left = styled.h2`
 
 export const Text1 = styled.p`
   font-size: 16px;
-  text-align: justify;
+  text-align: center;
   padding: 25px;
   line-height: 1.6em;
-  width: 800px;
-
+  width: 640px;
+  margin: auto;
   padding-bottom: 45px;
 `;
 

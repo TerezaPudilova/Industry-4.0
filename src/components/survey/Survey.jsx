@@ -69,6 +69,15 @@ const Survey = (props) => {
         isCategoryValid={isCategoryValid}
       />
 
+
+{!isCategoryValid && (
+        <Message
+          error
+          header="Nelze pokračovat"
+          content="Prosím, vyplňte všechny otázky"
+        />
+      )} 
+      
       <QuestionnaireButton>
         <Link to={previousUrl}>
           <Button disabled={categoryIndex === 0}>Předchozí</Button>
@@ -86,13 +95,6 @@ const Survey = (props) => {
         )}
       </QuestionnaireButton>
 
-      {!isCategoryValid && (
-        <Message
-          error
-          header="Nelze pokračovat"
-          content="Prosím, vyplňte všechny otázky"
-        />
-      )}
     </Form>
   );
 };
