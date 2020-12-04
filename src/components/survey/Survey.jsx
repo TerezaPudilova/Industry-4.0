@@ -7,7 +7,7 @@ import { QuestionnaireButton } from '../../styles/Container';
 
 const Survey = (props) => {
   const [isCategoryValid, setIsCategoryValid] = useState(true);
-  const [isSurveyValid, setIsSurveyValid] = useState(true);
+  const [isSurveyValid, setIsSurveyValid] = useState([]);
   const categories = props.categories;
   const codeNames = categories.map((category) => category.codeName);
   const { categoryCodeName } = useParams();
@@ -37,24 +37,19 @@ const Survey = (props) => {
 
   const validateSurvey = () => {
     const unansweredCategories = []; 
+    let index = 0
     props.surveyScore.forEach((category) => {
       const unansweredQuestions = category.filter((question) => {
         return question === 0;
       });
-      unansweredCategories.push(unansweredQuestions)
+      index++
+      if (unansweredQuestions.length !== 0) {
+        unansweredCategories.push(index)
+      }
     });
     
-    let isValid = false;
-
-    unansweredCategories.every((category) => {
-      if (category.length === 0) {
-        isValid = true;
-      } else {
-        return isValid = false;
-      }
-    })
-
-    return isValid
+    
+    return unansweredCategories
   };
 
 
@@ -76,11 +71,11 @@ const Survey = (props) => {
 
   const onSubmitHandler = (e) => {
     const isValid = validateSurvey();
-    if (isValid) {
-      setIsSurveyValid(true);
+    if (isValid.length === 0) {
+      setIsSurveyValid(isValid);
     } else {
       e.preventDefault();
-      setIsSurveyValid(false);
+      setIsSurveyValid(isValid);
     }
   };
 
@@ -92,7 +87,7 @@ const Survey = (props) => {
     categories[0];
 
   return (
-    <Form error={!isCategoryValid || !isSurveyValid}>
+    <Form error={!isCategoryValid || isSurveyValid.length !== 0 }>
       <CategorySwitcher
         categories={categories}
         categoryId={Math.max(codeNames.indexOf(categoryCodeName), 0)}
@@ -117,11 +112,11 @@ const Survey = (props) => {
       )} 
 
 
-{!isSurveyValid && (
+{isSurveyValid.length !== 0 && (
         <Message
           error
-          header="Nelze odeslat dotazník"
-          content="Prosím, vyplňte všechny kategorie"
+          header="Dotazník nelze odeslat"
+          content = {"Vyplňte všechny otázky v následujících kategoriích: " + isSurveyValid}
         />
       )} 
 
