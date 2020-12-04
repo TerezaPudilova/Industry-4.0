@@ -26,8 +26,12 @@ export const Menu = () => {
                       <Link to="/dotaznik/:categoryCodeName">Dotazník</Link>
                     </LinksItem>
                     <Link to="/vysledky">Výslední správa</Link>
+                    <LinksItem>
+                      <Link to="/registrace">Registrace</Link>
+                    </LinksItem>
                     <LinksItem href="#">FBE Praha</LinksItem>
                     <LinksItem href="#">FBE Bratislava</LinksItem>
+                   
                   </LinksMenu>
                 </Grid.Column>
               </Links>

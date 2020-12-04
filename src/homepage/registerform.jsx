@@ -268,8 +268,11 @@ export const ValidationSchemaExample = () => (
           souhlasNewSletter: '',
         }}
         validationSchema={SignupSchema}
+      /*   validateOnChange={false}
+        validateOnBlur={false} */
         onSubmit={(values) => {
           // same shape as initial values
+          // sem musim přidat něco, co provede validaci??
           console.log(values);
           db.collection('Registrace').add({
             jmenoPrijmeni: values.firstName + ' ' + values.lastName,
