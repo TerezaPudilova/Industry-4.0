@@ -28,9 +28,6 @@ const Question = (props) => {
         <div>
           {shuffled.map((answer) => (
                        <Form.Field key={answer.text} error={isError}>
-              {/*  <div>{answer.number}</div>
-              <div>{answer.text}</div>
-              <button onClick={() => setMarked(answer.number)}>Vybrat</button> */}
               <QuestionData> 
               <Radio
                label={answer.text + ' ' + answer.number}
