@@ -403,7 +403,7 @@ export const ValidationSchemaExample = () => {
                   />
                   <Field
                     name="souhlasUdaje"
-                    render={({ field, form }) => {
+                    render={({ field, form, meta }) => {
                       return (
                         <FormSemantic.Field>
                           <Checkbox
@@ -427,7 +427,7 @@ export const ValidationSchemaExample = () => {
                   />
                   <Field
                     name="souhlasNewsletter"
-                    render={({ field, form }) => {
+                    render={({ field, form, meta }) => {
                       return (
                         <FormSemantic.Field>
                           <Checkbox
