@@ -3,8 +3,10 @@ import {
   Buttons,
   Container,
   FullWidthContainer,
-
+  SurveyDesc,
+  SurveyInstruction,
   Title2,
+  ListInstruction,
 } from '../styles/Container';
 import { colors } from '../styles/variables.js';
 import styled from '@emotion/styled';
@@ -56,16 +58,18 @@ export const Postup = () => {
       <FullWidthContainer>
         <Container>
           <Title2 id="beforeYouStart">Než začnete</Title2>
-          
+          <SurveyDesc>
             <List1>
               {postup.map((item, i) => (
                 <ListNumber>
                   <CategoryNumber>{i + 1}.</CategoryNumber>{' '}
-                  <CategoryName>{item}</CategoryName>
+                  <SurveyInstruction>
+                    <CategoryName>{item}</CategoryName>
+                  </SurveyInstruction>
                 </ListNumber>
               ))}
             </List1>
-          
+          </SurveyDesc>
           <Buttons>
             <Link to="/dotaznik/MSA">
               <Button primary>Začít</Button>

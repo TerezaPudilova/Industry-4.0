@@ -38,15 +38,6 @@ export const Title2 = styled.h2`
   margin-bottom: 0px;
 `;
 
-export const Title2Left = styled.h2`
-  font-size: 20px;
-  font-weight: 400;
-  text-align: left;
-  padding: 25px;
-  margin-left: 30px;
-  margin-bottom: 0px;
-`;
-
 export const Text1 = styled.p`
   font-size: 16px;
   text-align: center;
@@ -57,13 +48,22 @@ export const Text1 = styled.p`
   padding-bottom: 45px;
 `;
 
+export const Title2Left = styled.h2`
+  font-size: 20px;
+  font-weight: 400;
+  text-align: left;
+  padding: 25px;
+  
+  margin-bottom: 0px;
+`;
+
 export const TextLeft = styled.p`
   font-size: 16px;
   text-align: left;
   padding: 25px;
   line-height: 1.6em;
   width: 450px;
-  margin-left: 30px;
+ 
 `;
 
 export const QuestionTitle1 = styled.div`
@@ -103,11 +103,11 @@ export const QuestionnaireButton = styled.div`
 
 export const TextFooter = styled.div`
   font-style: italic;
-  color:black;
+  color: black;
   text-align: center;
   padding: 25px;
   font-family: 'Roboto';
- `;
+`;
 
 export const Contacts = styled.div`
   display: flex;
@@ -157,11 +157,35 @@ export const RegistryForm = styled.div`
 export const FooterPart = styled.div`
   display: flex;
   flex-direction: row;
-	flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  margin: 32px;
 `;
 
 export const FooterItem = styled.div`
   display: block;
   width: 33%;
   text-align: center;
+
 `;
+
+export const FooterMiddleItem = styled.div`
+  display: block;
+  width: 33%;
+  text-align: center;
+  border-right-style: solid;
+  border-left-style: solid;
+  border-width: 1px;
+  border-color: ${colors.darkBlue};
+`;
+
+export const SurveyDesc = styled.div`
+  padding: 48px;
+`;
+
+export const SurveyInstruction = styled.div`
+  padding-left: 32px;
+  padding-right: 32px;
+  margin-bottom: 32px;
+`;
+
+

@@ -12,6 +12,7 @@ import {
   Roboti,
   RobotiWrapper,
   ContainerIndustry,
+  SurveyDesc,
 } from '../styles/Container';
 import { colors } from '../styles/variables';
 import DefaultTemplate from '../templates/DefaultTemplate';
@@ -66,6 +67,7 @@ export const UvodniStranka = () => {
         </FullWidthContainer>
         <FullWidthContainer bgColor={colors.darkBlue}>
           <Container>
+            <SurveyDesc>
             <Grid divided="vertically">
               <Grid.Row columns={2}>
                 <Grid.Column>
@@ -88,6 +90,7 @@ export const UvodniStranka = () => {
                 </Grid.Column>
               </Grid.Row>
             </Grid>
+            </SurveyDesc>
           </Container>
         </FullWidthContainer>
       </DefaultTemplate>

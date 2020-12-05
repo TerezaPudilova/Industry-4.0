@@ -4,6 +4,7 @@ import { Button, Form, Message } from 'semantic-ui-react';
 import Category from '../category/Category.jsx';
 import CategorySwitcher from '../categorySwitcher/CategorySwitcher.jsx';
 import { QuestionnaireButton } from '../../styles/Container';
+import { Footer } from '../../homepage/footer.jsx';
 
 const Survey = (props) => {
   const [isCategoryValid, setIsCategoryValid] = useState(true);
@@ -87,6 +88,7 @@ const Survey = (props) => {
     categories[0];
 
   return (
+    <>
     <Form error={!isCategoryValid || isSurveyValid.length !== 0 }>
       <CategorySwitcher
         categories={categories}
@@ -138,6 +140,8 @@ const Survey = (props) => {
       </QuestionnaireButton>
 
     </Form>
+    <Footer/>
+    </>
   );
 };
 
