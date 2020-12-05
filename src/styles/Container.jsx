@@ -52,7 +52,7 @@ export const Text1 = styled.p`
   text-align: center;
   padding: 25px;
   line-height: 1.6em;
-  width: 640px;
+  width: 720px;
   margin: auto;
   padding-bottom: 45px;
 `;
@@ -123,7 +123,8 @@ export const ContactsText = styled.div`
 
 export const Buttons = styled.div`
   text-align: center;
-  margin: 32px;
+  margin: 16px;
+  padding-bottom: 32px;
 `;
 
 export const Roboti = styled.div`
@@ -142,6 +143,7 @@ export const ContainerIndustry = styled.div`
   max-width: 1280px;
   margin: 0 auto;
   padding-top: 80px;
+  padding-bottom: 30px;
   font-family: 'Roboto';
   text-align: -webkit-center;
 `;

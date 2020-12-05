@@ -247,8 +247,8 @@ const SignupSchema = Yup.object().shape({
     .min(2, 'Too Short!')
     .max(50, 'Too Long!')
     .required('Required'),
-  souhlasUdaje: Yup.string().required('Required'),
-  souhlasNewSletter: Yup.string(),
+  souhlasUdaje: Yup.boolean().required('Required'),
+  souhlasNewSletter: Yup.boolean(),
 });
 
 export const ValidationSchemaExample = () => (
@@ -266,28 +266,31 @@ export const ValidationSchemaExample = () => (
           email: '',
           occupation: '',
           company: '',
-          souhlasUdaje: '',
-          souhlasNewSletter: '',
+          souhlasUdaje: false,
+          souhlasNewSletter: false,
         }}
         validationSchema={SignupSchema}
         validateOnChange={false}
         validateOnBlur={false}
-        onSubmit={(values) => {
+        onSubmit={async (values) => {
           // same shape as initial values
           // sem musim přidat něco, co provede validaci??
           console.log(values);
           alert(1)
-          db.collection('Registrace').add({
+          await db.collection('Registrace').add({
             jmenoPrijmeni: values.firstName +' '+ values.lastName,
             email: values.email,
-            telefon: values.kontaktniTelefon,
+            /* telefon: values.kontaktniTelefon, */
             nazevFirmy: values.company,
             pracovniPozice: values.occupation,
             udaje: values.souhlasUdaje,
             newsletter: values.souhlasNewSletter,
-        })}}
+          
+        })
+      
+      }}
       >
-        {({ errors, touched, onSubmit }) => (
+        {({ errors, touched, handleSubmit }) => (
           <Form>
             <FormSemantic>
               <Field
@@ -409,12 +412,18 @@ export const ValidationSchemaExample = () => (
                 <div>{errors.company}</div>
               ) : null}
               <Field
+                type="checkbox"
                 name="souhlasUdaje"
                 render={({ field }) => {
                   return (
                     <FormSemantic.Field>
                       <FormSemantic.Checkbox
                         {...field}
+                        /* onChange={(e, {
+                          checked
+                        })=> { field.onChange(checked)
+
+                        } } */
                         error={
                           errors.souhlasUdaje && {
                             content: errors.souhlasUdaje,
@@ -456,10 +465,10 @@ export const ValidationSchemaExample = () => (
               {errors.souhlasNewsletter && touched.souhlasNewSletter ? (
                 <div>{errors.souhlasNewsletter}</div>
               ) : null}
-              {/* <Link to="/vysledky"> */}
-                <Button onClick={() => onSubmit()}>Uložit a pokračovat na výsledky</Button>
+              
+                <Button type="submit">Uložit a pokračovat na výsledky</Button>
                 <br />
-              {/* </Link> */}
+              
             </FormSemantic>
           </Form>
         )}

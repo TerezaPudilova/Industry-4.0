@@ -1,5 +1,11 @@
 import React from 'react';
-import { Buttons, Container, FullWidthContainer, Title2 } from '../styles/Container';
+import {
+  Buttons,
+  Container,
+  FullWidthContainer,
+
+  Title2,
+} from '../styles/Container';
 import { colors } from '../styles/variables.js';
 import styled from '@emotion/styled';
 import { Button } from 'semantic-ui-react';
@@ -50,17 +56,19 @@ export const Postup = () => {
       <FullWidthContainer>
         <Container>
           <Title2 id="beforeYouStart">Než začnete</Title2>
-          <List1>
-            {postup.map((item, i) => (
-              <ListNumber>
-                <CategoryNumber>{i + 1}.</CategoryNumber>{' '}
-                <CategoryName>{item}</CategoryName>
-              </ListNumber>
-            ))}
-          </List1>
+          
+            <List1>
+              {postup.map((item, i) => (
+                <ListNumber>
+                  <CategoryNumber>{i + 1}.</CategoryNumber>{' '}
+                  <CategoryName>{item}</CategoryName>
+                </ListNumber>
+              ))}
+            </List1>
+          
           <Buttons>
             <Link to="/dotaznik/MSA">
-            <Button primary>Začít</Button>
+              <Button primary>Začít</Button>
             </Link>
           </Buttons>
         </Container>

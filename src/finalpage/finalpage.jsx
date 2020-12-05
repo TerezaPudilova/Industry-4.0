@@ -97,13 +97,13 @@ export const FinalPage = (props) => {
              
             
           </Title1>
-          <p>
+          <Text1>
             Výslední skóre je vygenerováno na základě odpovědí, které jste
             zvolili v každém oddílu dotazníku. Níže si můžete prohlédnout graf,
             který ukazuje vaše silné stránky i potenciál na zlepšení. Závěrečnou
             zprávu je možné ihned vytisknout, nebo vygenerovat ve formátu pdf a
             zaslat na vaší emailovou adresu zadanou při registraci.{' '}
-          </p>
+          </Text1>
           <Title2>
             <h1>
               Návod na čtení výsledků dosáhnutých v jednotlivých oblastech
