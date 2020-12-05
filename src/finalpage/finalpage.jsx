@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { render } from 'react-dom';
 import { Kontakty } from './kontakty.jsx';
 import { Menu } from '../components/menu.jsx';
 import { Radar } from 'react-chartjs-2';
@@ -13,13 +12,12 @@ import {
 import { TableExampleWarningShorthand } from './tableresult';
 import './reccomendation.jsx';
 import { getRecomendation } from './reccomendation.jsx';
-import {Footer} from '../homepage/footer.jsx';
+import { Footer } from '../homepage/footer.jsx';
 import { Button } from 'semantic-ui-react';
 //import styled from '@emotion/styled';
 //import { jsPDF } from "jspdf";
-import ReactDOMServer from 'react-dom/server';
-
-
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import { FinalPagePdf } from './finalpagepdf.jsx';
 
 const categoryLabels = [
   'Měřící systémy',
@@ -34,7 +32,8 @@ const categoryLabels = [
 const tableFillData = (props) => {
   const [tableResultData, setTableResultData] = useState([]);
   const categoryScore = props.surveyScore.map((category) =>
-    category.reduce((agg, curr) => agg + curr, 0));
+    category.reduce((agg, curr) => agg + curr, 0),
+  );
   let resultScore = [7];
   for (let i = 0; i < categoryLabels.length; i++) {
     resultScore[i] = {
@@ -43,8 +42,8 @@ const tableFillData = (props) => {
       notes: getRecomendation(i, categoryScore[i]),
     };
   }
-//  setTableResultData(result => [...result, resultScore]);
-  console.log(resultScore);
+  //  setTableResultData(result => [...result, resultScore]);
+  // console.log(resultScore);
   return resultScore;
 };
 
@@ -57,31 +56,41 @@ export const FinalPage = (props) => {
         borderColor: '#003277',
         borderWidth: 3,
         fontFamily: 'Roboto',
-       drawDashedLine: ([15, 3, 3, 3]),
-            pointBorderColor: 'orange',
-                data: props.surveyScore.map((category) =>
+        drawDashedLine: [15, 3, 3, 3],
+        pointBorderColor: 'orange',
+        data: props.surveyScore.map((category) =>
           category.reduce((agg, curr) => agg + curr, 0),
         ),
       },
     ],
   };
-
-  const PrintToPdf=()=> {
-    var doc=new jsPDF();
-  doc.fromHTML(ReactDOMServer.renderToStaticMarkup(<FinalPage/>));
-  doc.save("myDocument.pdf");
-  }
-  
-  const options = {
-    scale: {
-      ticks: {suggestedMin:0,suggestedMax: 21 },
-      gridLines: {color:'grey'},
-      pointLabels: {fontSize: 14 },
-      angleLines: { color: 'grey' },
-         }
+ 
+  const PrintToPdf = () => {
+    window.print();
   };
+
+  const options = {
+    responsive: true,
+    devicePixelRatio: 4,
+    /*    plotOptions: {radar: { size: 140, polygons: {strokeColors: '#e9e9e9', fill: { colors: ['#f8f8f8', '#fff'] } } } },
+    chart: {
+      height: 350,
+      type: 'radar',
+    },
+    */
+    layout: { padding: { left: 50, right: 50, top: 50, bottom: 10 }},
+    
+    scale: {
+      ticks: { suggestedMin: 0, suggestedMax: 21 },
+      gridLines: { color: 'grey' },
+      pointLabels: { fontSize: 14 },
+      angleLines: { color: 'grey' },
+    },
+  };
+
   const categoryScore = props.surveyScore.map((category) =>
-  category.reduce((agg, curr) => agg + curr, 0));
+    category.reduce((agg, curr) => agg + curr, 0),
+  );
 
   const resultScore = categoryScore.reduce((agg, curr) => agg + curr, 0) / 7;
   return (
@@ -89,13 +98,29 @@ export const FinalPage = (props) => {
       <Menu />
       <FullWidthContainer>
         <Container>
+          <Button onClick={()=> PrintToPdf()}>Tisk stranky</Button>
 
-          <Button onClick={() => PrintToPdf()}>Výslední správu vygenerovat do pdf</Button>
+          {/*  
+        <PDFDownloadLink
+      document={<FinalPagePdf surveyScore={props.surveyScore} />}
+      fileName="movielist.pdf"
+      style={{
+        textDecoration: "none",
+        padding: "10px",
+        color: "#4a4a4a",
+        backgroundColor: "#f2f2f2",
+        border: "1px solid #4a4a4a"
+      }}
+    >
+      {({ blob, url, loading, error }) =>
+        loading ? "Loading document..." : "Download Pdf"
+      }
+    </PDFDownloadLink>  */}
           <Title1>
             <h1>
-              Vaše celkové skóre v auditu připravenosti na Industry 4.0 je {Math.round(resultScore)}</h1> 
-             
-            
+              Vaše celkové skóre v auditu připravenosti na Industry 4.0 je{' '}
+              {Math.round(resultScore)}
+            </h1>
           </Title1>
           <Text1>
             Výslední skóre je vygenerováno na základě odpovědí, které jste
@@ -134,14 +159,20 @@ export const FinalPage = (props) => {
           <Title2>
             <h1>Výsledky vašeho samohodnocení v jednotlivých oblastech:</h1>
           </Title2>
-         <TableExampleWarningShorthand tableResult={tableFillData(props)} />
+          <TableExampleWarningShorthand tableResult={tableFillData(props)} />
         </Container>
       </FullWidthContainer>
 
-      <Radar data={data} width={300} height={300} legend={{ display: false }} options={options}/>
+      <Radar
+        data={data}
+        type='radar'
+        width={300}
+        high={400}
+        legend={{ display: false }}
+        options={options}
+      />
       <Kontakty />
-      <Footer/>
+      <Footer />
     </>
   );
 };
-

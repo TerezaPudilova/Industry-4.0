@@ -18,7 +18,7 @@ export const Footer = () => {
           designed by Ingrid Haburaiová&Tereza Pudilová
           <br />
           <br />
-          <img width="120px" src="img/LI-Logo.png" alt="logoLinkedIn" />
+          <img width="120px" src="/img/LI-Logo.png" alt="logoLinkedIn" />
         </FooterItem>
 
         <FooterMiddleItem>
