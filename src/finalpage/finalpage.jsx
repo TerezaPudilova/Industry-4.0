@@ -8,6 +8,7 @@ import {
   Title1,
   Title2,
   Text1,
+  FinalScore,
 } from '../styles/Container';
 import { TableExampleWarningShorthand } from './tableresult';
 import './reccomendation.jsx';
@@ -16,8 +17,7 @@ import { Footer } from '../homepage/footer.jsx';
 import { Button } from 'semantic-ui-react';
 //import styled from '@emotion/styled';
 //import { jsPDF } from "jspdf";
-import { PDFDownloadLink } from "@react-pdf/renderer";
-import { FinalPagePdf } from './finalpagepdf.jsx';
+import ReactDOMServer from 'react-dom/server';
 
 const categoryLabels = [
   'Měřící systémy',
@@ -43,7 +43,7 @@ const tableFillData = (props) => {
     };
   }
   //  setTableResultData(result => [...result, resultScore]);
-  // console.log(resultScore);
+  console.log(resultScore);
   return resultScore;
 };
 
@@ -98,29 +98,9 @@ export const FinalPage = (props) => {
       <Menu />
       <FullWidthContainer>
         <Container>
-          <Button onClick={()=> PrintToPdf()}>Tisk stranky</Button>
-
-          {/*  
-        <PDFDownloadLink
-      document={<FinalPagePdf surveyScore={props.surveyScore} />}
-      fileName="movielist.pdf"
-      style={{
-        textDecoration: "none",
-        padding: "10px",
-        color: "#4a4a4a",
-        backgroundColor: "#f2f2f2",
-        border: "1px solid #4a4a4a"
-      }}
-    >
-      {({ blob, url, loading, error }) =>
-        loading ? "Loading document..." : "Download Pdf"
-      }
-    </PDFDownloadLink>  */}
           <Title1>
-            <h1>
-              Vaše celkové skóre v auditu připravenosti na Industry 4.0 je{' '}
-              {Math.round(resultScore)}
-            </h1>
+            Vaše celkové skóre v auditu připravenosti na Industry 4.0 je:{' '}
+            <FinalScore>{Math.round(resultScore)} BODŮ</FinalScore>
           </Title1>
           <Text1>
             Výslední skóre je vygenerováno na základě odpovědí, které jste
@@ -129,35 +109,36 @@ export const FinalPage = (props) => {
             zprávu je možné ihned vytisknout, nebo vygenerovat ve formátu pdf a
             zaslat na vaší emailovou adresu zadanou při registraci.{' '}
           </Text1>
+          <Button secondary onClick={() => PrintToPdf()}>
+            Výslední správu vygenerovat do pdf
+          </Button>
           <Title2>
-            <h1>
-              Návod na čtení výsledků dosáhnutých v jednotlivých oblastech
-            </h1>
+            Návod na čtení výsledků dosáhnutých v jednotlivých oblastech
           </Title2>
-          <Text1>
-            <h1>21-18 bodů</h1>
-            <p>
+          <Container>
+            <Title1>18-21 bodů</Title1>
+            <Text1>
               Top úroveň - vaše firma je velmi dobře připravená na transformaci
               dle principů Industry 4.0. Ale není dobře spokojit se ze současným
               stavem - konkurence nikdy nespí.
-            </p>
-            <h1>17-14 bodů</h1>
-            <p>
+            </Text1>
+            <Title1>14-17 bodů</Title1>
+            <Text1>
               Střední úroveň - vaše firma je na transformaci dle principů
               Industry 4.0 připravena v některých oblastech. Inspirujte se
               doporučeními, snažte se zejména o systematický přístup k celkovému
               zlepšování. Nezapomínejte na motivaci vašich lidí.
-            </p>
-            <h1>13-7 bodů</h1>
-            <p>
+            </Text1>
+            <Title1>7-13 bodů</Title1>
+            <Text1>
               Vaše firma má ještě velký potenciál v systému a procesech, který
               je potřeba využít pro přípravu na Industry 4.0. Doporučujeme co
               nejdříve začít realizovat projekty, které Vám pomůžou nastartovat
               změny směrem k celkové optimalizaci.
-            </p>
-          </Text1>
+            </Text1>
+          </Container>
           <Title2>
-            <h1>Výsledky vašeho samohodnocení v jednotlivých oblastech:</h1>
+            Výsledky vašeho samohodnocení v jednotlivých oblastech:
           </Title2>
           <TableExampleWarningShorthand tableResult={tableFillData(props)} />
         </Container>

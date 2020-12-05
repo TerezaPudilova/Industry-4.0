@@ -31,7 +31,7 @@ export const Title1 = styled.h1`
 `;
 
 export const Title2 = styled.h2`
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 400;
   text-align: center;
   padding: 25px;
@@ -110,6 +110,7 @@ export const TextFooter = styled.div`
 `;
 
 export const Contacts = styled.div`
+max-width:1280px;
   display: flex;
   padding: 25px;
   margin: 25px;
@@ -152,6 +153,7 @@ export const RegistryForm = styled.div`
   max-width: 640px;
   margin: auto;
   text-align: center;
+  padding-bottom: 48px;
 `;
 
 export const FooterPart = styled.div`
@@ -179,13 +181,17 @@ export const FooterMiddleItem = styled.div`
 `;
 
 export const SurveyDesc = styled.div`
-  padding: 48px;
+  padding: 28px;
+  line-height: 1.6em;
 `;
 
 export const SurveyInstruction = styled.div`
   padding-left: 32px;
   padding-right: 32px;
-  margin-bottom: 32px;
 `;
 
-
+export const FinalScore = styled.div`
+font-weight: 400;
+font-size: 36px;
+padding-top: 24px;
+`

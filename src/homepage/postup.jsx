@@ -20,10 +20,11 @@ const List1 = styled.ul`
 `;
 
 const ListNumber = styled.li`
+  display:block;
   list-style: none;
   padding: 0;
   width: 33.33333%;
-  height: 100px;
+  height: 120px;
 `;
 
 const CategoryNumber = styled.div`
@@ -40,7 +41,6 @@ const CategoryNumber = styled.div`
 
 const CategoryName = styled.div`
   font-size: 16px;
-  margin-top: 10px;
 `;
 
 const postup = [
