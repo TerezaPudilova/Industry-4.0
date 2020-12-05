@@ -41,7 +41,6 @@ const App = () => {
             <FinalPage surveyScore={surveyScore} />
           </Route>
           <Route path="/registrace">
-           {/*  <RegisterForm />  */}
             <ValidationSchemaExample/> 
           </Route>
           <Route path="/" component={Homepage} />

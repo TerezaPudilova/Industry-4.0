@@ -16,7 +16,7 @@ import { getRecomendation } from './reccomendation.jsx';
 import {Footer} from '../homepage/footer.jsx';
 import { Button } from 'semantic-ui-react';
 //import styled from '@emotion/styled';
-import { jsPDF } from "jspdf";
+//import { jsPDF } from "jspdf";
 import ReactDOMServer from 'react-dom/server';
 
 

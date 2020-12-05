@@ -239,7 +239,7 @@ const SignupSchema = Yup.object().shape({
     .max(50, 'Too Long!')
     .required('Required'),
   email: Yup.string().email('Invalid email').required('Required'),
-  function: Yup.string()
+  occupation: Yup.string()
     .min(2, 'Too Short!')
     .max(50, 'Too Long!')
     .required('Required'),
@@ -252,8 +252,10 @@ const SignupSchema = Yup.object().shape({
 });
 
 export const ValidationSchemaExample = () => (
+  <>
+  <Menu />
   <Container>
-    <Menu />
+    
     <RegistryForm>
       <Title1>Registrace</Title1>
       <Text1>Pro zobrazení výsledků se prosím registrujte</Text1>
@@ -262,44 +264,31 @@ export const ValidationSchemaExample = () => (
           firstName: '',
           lastName: '',
           email: '',
-          function: '',
+          occupation: '',
           company: '',
           souhlasUdaje: '',
           souhlasNewSletter: '',
         }}
         validationSchema={SignupSchema}
-      /*   validateOnChange={false}
-        validateOnBlur={false} */
+        validateOnChange={false}
+        validateOnBlur={false}
         onSubmit={(values) => {
           // same shape as initial values
           // sem musim přidat něco, co provede validaci??
           console.log(values);
           alert(1)
           db.collection('Registrace').add({
-            jmenoPrijmeni: values.jmeno+' '+values.prijmeni,
+            jmenoPrijmeni: values.firstName +' '+ values.lastName,
             email: values.email,
             telefon: values.kontaktniTelefon,
-            nazevFirmy: values.nazevFirmy,
-            pracovniPozice: values.pracovniPozice,
-            udaje: values.udaje,
-            newsletter: values.newsletter,
+            nazevFirmy: values.company,
+            pracovniPozice: values.occupation,
+            udaje: values.souhlasUdaje,
+            newsletter: values.souhlasNewSletter,
         })}}
       >
-        {({ errors, touched }) => (
-          <Form onSubmit={(values) => {
-            // same shape as initial values
-            // sem musim přidat něco, co provede validaci??
-            console.log(values);
-            alert(1);
-            db.collection('Registrace').add({
-              jmenoPrijmeni: values.jmeno+' '+values.prijmeni,
-              email: values.email,
-              telefon: values.kontaktniTelefon,
-              nazevFirmy: values.nazevFirmy,
-              pracovniPozice: values.pracovniPozice,
-              udaje: values.udaje,
-              newsletter: values.newsletter,
-          })}}>
+        {({ errors, touched, onSubmit }) => (
+          <Form>
             <FormSemantic>
               <Field
                 name="firstName"
@@ -372,15 +361,15 @@ export const ValidationSchemaExample = () => (
               />
               {errors.email && touched.email ? <div>{errors.email}</div> : null}
               <Field
-                name="function"
+                name="occupation"
                 render={({ field }) => {
                   return (
                     <FormSemantic.Field>
                       <FormSemantic.Input
                         {...field}
                         error={
-                          errors.function && {
-                            content: errors.function,
+                          errors.occupation && {
+                            content: errors.occupation,
                             pointing: 'below',
                           }
                         }
@@ -392,8 +381,8 @@ export const ValidationSchemaExample = () => (
                   );
                 }}
               />
-              {errors.function && touched.function ? (
-                <div>{errors.function}</div>
+              {errors.occupation && touched.occupation ? (
+                <div>{errors.occupation}</div>
               ) : null}
               <Field
                 name="company"
@@ -467,14 +456,15 @@ export const ValidationSchemaExample = () => (
               {errors.souhlasNewsletter && touched.souhlasNewSletter ? (
                 <div>{errors.souhlasNewsletter}</div>
               ) : null}
-              <Link to="/vysledky">
-                <Button type="submit">Uložit a pokračovat na výsledky</Button>
+              {/* <Link to="/vysledky"> */}
+                <Button onClick={() => onSubmit()}>Uložit a pokračovat na výsledky</Button>
                 <br />
-              </Link>
+              {/* </Link> */}
             </FormSemantic>
           </Form>
         )}
       </Formik>
     </RegistryForm>
   </Container>
+  </>
 );
