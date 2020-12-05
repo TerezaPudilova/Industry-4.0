@@ -30,7 +30,7 @@ const Question = (props) => {
                        <Form.Field key={answer.text} error={isError}>
               <QuestionData> 
               <Radio
-               label={answer.text + ' ' + answer.number}
+               label={answer.text}
                 value={answer.number}
                 name={question}
                 checked={props.value === answer.number}

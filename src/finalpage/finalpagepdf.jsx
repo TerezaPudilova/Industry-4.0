@@ -1,24 +1,7 @@
-import React, { useState } from 'react';
+import {React} from 'react';
+import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import ReactPDF from '@react-pdf/renderer';
 import { render } from 'react-dom';
-import { Kontakty } from './kontakty.jsx';
-import { Menu } from '../components/menu.jsx';
-import { Radar } from 'react-chartjs-2';
-import {
-  Container,
-  FullWidthContainer,
-  Title1,
-  Title2,
-  Text1,
-} from '../styles/Container';
-import { TableExampleWarningShorthand } from './tableresult';
-import './reccomendation.jsx';
-import { getRecomendation } from './reccomendation.jsx';
-import {Footer} from '../homepage/footer.jsx';
-import { Button } from 'semantic-ui-react';
-//import styled from '@emotion/styled';
-import { jsPDF } from "jspdf";
-import ReactDOMServer from 'react-dom/server';
-
 
 
 const categoryLabels = [
@@ -48,7 +31,7 @@ const tableFillData = (props) => {
   return resultScore;
 };
 
-export const FinalPage = (props) => {
+export const FinalPagePdf = (props) => {
   const data = {
     labels: categoryLabels,
     datasets: [
@@ -58,19 +41,15 @@ export const FinalPage = (props) => {
         borderWidth: 3,
         fontFamily: 'Roboto',
        drawDashedLine: ([15, 3, 3, 3]),
-            pointBorderColor: 'orange',
-                data: props.surveyScore.map((category) =>
+        //pointBackgroundColor: 'rgba(179,181,198,1)',
+        pointBorderColor: 'orange',
+        //pointHoverBorderColor: 'rgba(179,181,198,1)',
+        data: props.surveyScore.map((category) =>
           category.reduce((agg, curr) => agg + curr, 0),
         ),
       },
     ],
   };
-
-  const PrintToPdf=()=> {
-    var doc=new jsPDF();
-  doc.fromHTML(ReactDOMServer.renderToStaticMarkup(<FinalPage/>));
-  doc.save("myDocument.pdf");
-  }
   
   const options = {
     scale: {
@@ -84,13 +63,16 @@ export const FinalPage = (props) => {
   category.reduce((agg, curr) => agg + curr, 0));
 
   const resultScore = categoryScore.reduce((agg, curr) => agg + curr, 0) / 7;
-  return (
-    <>
+  
+  <Document>
+    <Page size="A4" style={styles.page}>
+      <View >
+        
       <Menu />
       <FullWidthContainer>
         <Container>
 
-          <Button onClick={() => PrintToPdf()}>Výslední správu vygenerovat do pdf</Button>
+          <Button>Výslední správu vygenerovat do pdf</Button>
           <Title1>
             <h1>
               Vaše celkové skóre v auditu připravenosti na Industry 4.0 je {Math.round(resultScore)}</h1> 
@@ -141,7 +123,57 @@ export const FinalPage = (props) => {
       <Radar data={data} width={300} height={300} legend={{ display: false }} options={options}/>
       <Kontakty />
       <Footer/>
-    </>
-  );
+    </View>
+    </Page>
+    </Document>
 };
 
+const styles = StyleSheet.create({
+  page: {
+    paddingTop: 35,
+    paddingBottom: 65,
+    paddingHorizontal: 35,
+  },
+  title: {
+    fontSize: 24,
+    textAlign: 'center',
+    fontFamily: 'Oswald'
+  },
+  author: {
+    fontSize: 12,
+    textAlign: 'center',
+    marginBottom: 40,
+  },
+  subtitle: {
+    fontSize: 18,
+    margin: 12,
+    fontFamily: 'Oswald'
+  },
+  text: {
+    margin: 12,
+    fontSize: 14,
+    textAlign: 'justify',
+    fontFamily: 'Times-Roman'
+  },
+  image: {
+    marginVertical: 15,
+    marginHorizontal: 100,
+  },
+  header: {
+    fontSize: 12,
+    marginBottom: 20,
+    textAlign: 'center',
+    color: 'grey',
+  },
+  pageNumber: {
+    position: 'absolute',
+    fontSize: 12,
+    bottom: 30,
+    left: 0,
+    right: 0,
+    textAlign: 'center',
+    color: 'grey',
+  },
+});
+
+ReactPDF.render(<FinalPagePdf/>);
