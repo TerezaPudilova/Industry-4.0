@@ -59,7 +59,7 @@ export const UvodniStranka = () => {
               jednodušší a obsáhlejší pochopení požadavků a potřeb zákazníků
               (big data) a okamžité sdílení potřebných informací přes komplexní
               řeťězce dodávek a sítí. Smart firmy produkují víc, s menším
-              plýtváním - a stávají se tak{' '}
+              plýtváním - a stávají se tak
               <strong>víc konkurence schopné i na globálních trzích</strong>.
             </Text1>
           </ContainerIndustry>

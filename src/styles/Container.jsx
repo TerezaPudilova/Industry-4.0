@@ -103,14 +103,16 @@ export const QuestionnaireButton = styled.div`
 
 export const TextFooter = styled.div`
   font-style: italic;
-  color: '#003277';
+  color:black;
   text-align: center;
   padding: 25px;
-`;
+  font-family: 'Roboto';
+ `;
 
 export const Contacts = styled.div`
   display: flex;
   padding: 25px;
+  margin: 25px;
 `;
 
 export const ContactsText = styled.div`
@@ -150,3 +152,14 @@ export const RegistryForm = styled.div`
   text-align: center;
 `;
 
+export const FooterPart = styled.div`
+  display: flex;
+  flex-direction: row;
+	flex-wrap: nowrap;
+`;
+
+export const FooterItem = styled.div`
+  display: block;
+  width: 33%;
+  text-align: center;
+`;

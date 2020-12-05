@@ -13,6 +13,7 @@ import {
 import { TableExampleWarningShorthand } from './tableresult';
 import './reccomendation.jsx';
 import { getRecomendation } from './reccomendation.jsx';
+import {Footer} from '../homepage/footer.jsx';
 
 const categoryLabels = [
   'Měřící systémy',
@@ -49,12 +50,12 @@ export const FinalPage = (props) => {
     datasets: [
       {
         backgroundColor: 'rgba(179,181,198,0.2)',
-        borderColor: '#c46a36',
-        borderWidth: 5,
+        borderColor: '#003277',
+        borderWidth: 3,
+        backgroundColor: ['#A5DDF7'],
         //drawDashedLine: ([15, 3, 3, 3]),
         pointBackgroundColor: 'rgba(179,181,198,1)',
-        pointBorderColor: '#c46a36',
-        pointHoverBackgroundColor: '#fff',
+        pointBorderColor: 'orange',
         pointHoverBorderColor: 'rgba(179,181,198,1)',
         data: props.surveyScore.map((category) =>
           category.reduce((agg, curr) => agg + curr, 0),
@@ -63,6 +64,11 @@ export const FinalPage = (props) => {
     ],
   };
   
+  const options = {
+    scale: {
+      ticks: {suggestedMin:0,suggestedMax: 21 },
+    }
+  };
   const categoryScore = props.surveyScore.map((category) =>
   category.reduce((agg, curr) => agg + curr, 0));
 
@@ -74,8 +80,9 @@ export const FinalPage = (props) => {
         <Container>
           <Title1>
             <h1>
-              Vaše celkové skóre v auditu připravenosti na Industry 4.0 je {Math.round(resultScore)}
-            </h1>
+              Vaše celkové skóre v auditu připravenosti na Industry 4.0 je {Math.round(resultScore)}</h1> 
+             
+            
           </Title1>
           <p>
             Výslední skóre je vygenerováno na základě odpovědí, které jste
@@ -118,8 +125,9 @@ export const FinalPage = (props) => {
         </Container>
       </FullWidthContainer>
 
-      <Radar data={data} width={300} height={300} legend={{ display: false }} />
+      <Radar data={data} width={300} height={300} legend={{ display: false }} options={options}/>
       <Kontakty />
+      <Footer/>
     </>
   );
 };
