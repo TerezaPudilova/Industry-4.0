@@ -31,7 +31,7 @@ export const Title1 = styled.h1`
 `;
 
 export const Title2 = styled.h2`
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 400;
   text-align: center;
   padding: 25px;
@@ -189,3 +189,8 @@ export const SurveyInstruction = styled.div`
   padding-right: 32px;
 `;
 
+export const FinalScore = styled.div`
+font-weight: 400;
+font-size: 36px;
+padding-top: 24px;
+`

@@ -29,9 +29,9 @@ export const Menu = () => {
                     <LinksItem>
                       <Link to="/registrace">Registrace</Link>
                     </LinksItem>
-                    <LinksItem href="#">FBE Praha</LinksItem>
-                    <LinksItem href="#">FBE Bratislava</LinksItem>
-                   
+                    <LinksItem href="#footer">Kontakty</LinksItem>
+                    <LinksItem href="https://www.fbe.cz/index.php">FBE Praha</LinksItem>
+                    <LinksItem href="https://www.fbe.sk/">FBE Bratislava</LinksItem>
                   </LinksMenu>
                 </Grid.Column>
               </Links>

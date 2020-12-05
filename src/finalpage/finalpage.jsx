@@ -9,17 +9,16 @@ import {
   Title1,
   Title2,
   Text1,
+  FinalScore,
 } from '../styles/Container';
 import { TableExampleWarningShorthand } from './tableresult';
 import './reccomendation.jsx';
 import { getRecomendation } from './reccomendation.jsx';
-import {Footer} from '../homepage/footer.jsx';
+import { Footer } from '../homepage/footer.jsx';
 import { Button } from 'semantic-ui-react';
 //import styled from '@emotion/styled';
 //import { jsPDF } from "jspdf";
 import ReactDOMServer from 'react-dom/server';
-
-
 
 const categoryLabels = [
   'Měřící systémy',
@@ -34,7 +33,8 @@ const categoryLabels = [
 const tableFillData = (props) => {
   const [tableResultData, setTableResultData] = useState([]);
   const categoryScore = props.surveyScore.map((category) =>
-    category.reduce((agg, curr) => agg + curr, 0));
+    category.reduce((agg, curr) => agg + curr, 0),
+  );
   let resultScore = [7];
   for (let i = 0; i < categoryLabels.length; i++) {
     resultScore[i] = {
@@ -43,7 +43,7 @@ const tableFillData = (props) => {
       notes: getRecomendation(i, categoryScore[i]),
     };
   }
-//  setTableResultData(result => [...result, resultScore]);
+  //  setTableResultData(result => [...result, resultScore]);
   console.log(resultScore);
   return resultScore;
 };
@@ -57,31 +57,32 @@ export const FinalPage = (props) => {
         borderColor: '#003277',
         borderWidth: 3,
         fontFamily: 'Roboto',
-       drawDashedLine: ([15, 3, 3, 3]),
-            pointBorderColor: 'orange',
-                data: props.surveyScore.map((category) =>
+        drawDashedLine: [15, 3, 3, 3],
+        pointBorderColor: 'orange',
+        data: props.surveyScore.map((category) =>
           category.reduce((agg, curr) => agg + curr, 0),
         ),
       },
     ],
   };
 
-  const PrintToPdf=()=> {
-    var doc=new jsPDF();
-  doc.fromHTML(ReactDOMServer.renderToStaticMarkup(<FinalPage/>));
-  doc.save("myDocument.pdf");
-  }
-  
+  const PrintToPdf = () => {
+    var doc = new jsPDF();
+    doc.fromHTML(ReactDOMServer.renderToStaticMarkup(<FinalPage />));
+    doc.save('myDocument.pdf');
+  };
+
   const options = {
     scale: {
-      ticks: {suggestedMin:0,suggestedMax: 21 },
-      gridLines: {color:'grey'},
-      pointLabels: {fontSize: 14 },
+      ticks: { suggestedMin: 0, suggestedMax: 21 },
+      gridLines: { color: 'grey' },
+      pointLabels: { fontSize: 14 },
       angleLines: { color: 'grey' },
-         }
+    },
   };
   const categoryScore = props.surveyScore.map((category) =>
-  category.reduce((agg, curr) => agg + curr, 0));
+    category.reduce((agg, curr) => agg + curr, 0),
+  );
 
   const resultScore = categoryScore.reduce((agg, curr) => agg + curr, 0) / 7;
   return (
@@ -89,13 +90,9 @@ export const FinalPage = (props) => {
       <Menu />
       <FullWidthContainer>
         <Container>
-
-          
           <Title1>
-            <h1>
-              Vaše celkové skóre v auditu připravenosti na Industry 4.0 je {Math.round(resultScore)}</h1> 
-             
-            
+            Vaše celkové skóre v auditu připravenosti na Industry 4.0 je:{' '}
+            <FinalScore>{Math.round(resultScore)} BODŮ</FinalScore>
           </Title1>
           <Text1>
             Výslední skóre je vygenerováno na základě odpovědí, které jste
@@ -104,45 +101,50 @@ export const FinalPage = (props) => {
             zprávu je možné ihned vytisknout, nebo vygenerovat ve formátu pdf a
             zaslat na vaší emailovou adresu zadanou při registraci.{' '}
           </Text1>
-          <Button secondary onClick={() => PrintToPdf()}>Výslední správu vygenerovat do pdf</Button>
+          <Button secondary onClick={() => PrintToPdf()}>
+            Výslední správu vygenerovat do pdf
+          </Button>
           <Title2>
-            <h1>
-              Návod na čtení výsledků dosáhnutých v jednotlivých oblastech
-            </h1>
+            Návod na čtení výsledků dosáhnutých v jednotlivých oblastech
           </Title2>
-          <Text1>
-            <h1>21-18 bodů</h1>
-            <p>
+          <Container>
+            <Title1>18-21 bodů</Title1>
+            <Text1>
               Top úroveň - vaše firma je velmi dobře připravená na transformaci
               dle principů Industry 4.0. Ale není dobře spokojit se ze současným
               stavem - konkurence nikdy nespí.
-            </p>
-            <h1>17-14 bodů</h1>
-            <p>
+            </Text1>
+            <Title1>14-17 bodů</Title1>
+            <Text1>
               Střední úroveň - vaše firma je na transformaci dle principů
               Industry 4.0 připravena v některých oblastech. Inspirujte se
               doporučeními, snažte se zejména o systematický přístup k celkovému
               zlepšování. Nezapomínejte na motivaci vašich lidí.
-            </p>
-            <h1>13-7 bodů</h1>
-            <p>
+            </Text1>
+            <Title1>7-13 bodů</Title1>
+            <Text1>
               Vaše firma má ještě velký potenciál v systému a procesech, který
               je potřeba využít pro přípravu na Industry 4.0. Doporučujeme co
               nejdříve začít realizovat projekty, které Vám pomůžou nastartovat
               změny směrem k celkové optimalizaci.
-            </p>
-          </Text1>
+            </Text1>
+          </Container>
           <Title2>
-            <h1>Výsledky vašeho samohodnocení v jednotlivých oblastech:</h1>
+            Výsledky vašeho samohodnocení v jednotlivých oblastech:
           </Title2>
-         <TableExampleWarningShorthand tableResult={tableFillData(props)} />
+          <TableExampleWarningShorthand tableResult={tableFillData(props)} />
         </Container>
       </FullWidthContainer>
 
-      <Radar data={data} width={300} height={300} legend={{ display: false }} options={options}/>
+      <Radar
+        data={data}
+        width={300}
+        height={300}
+        legend={{ display: false }}
+        options={options}
+      />
       <Kontakty />
-      <Footer/>
+      <Footer />
     </>
   );
 };
-

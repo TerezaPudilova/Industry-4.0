@@ -12,7 +12,7 @@ import {
 export const Footer = () => {
   return (
     <>
-      <FooterPart>
+      <FooterPart id="footer">
         <FooterItem>
           {' '}
           designed by Ingrid Haburaiová&Tereza Pudilová
