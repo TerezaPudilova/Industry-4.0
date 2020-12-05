@@ -49,14 +49,14 @@ export const FinalPage = (props) => {
     labels: categoryLabels,
     datasets: [
       {
-        backgroundColor: 'rgba(179,181,198,0.2)',
+        backgroundColor: 'rgba(179,181,198,0.4)',
         borderColor: '#003277',
         borderWidth: 3,
-        backgroundColor: ['#A5DDF7'],
-        //drawDashedLine: ([15, 3, 3, 3]),
-        pointBackgroundColor: 'rgba(179,181,198,1)',
+        fontFamily: 'Roboto',
+       drawDashedLine: ([15, 3, 3, 3]),
+        //pointBackgroundColor: 'rgba(179,181,198,1)',
         pointBorderColor: 'orange',
-        pointHoverBorderColor: 'rgba(179,181,198,1)',
+        //pointHoverBorderColor: 'rgba(179,181,198,1)',
         data: props.surveyScore.map((category) =>
           category.reduce((agg, curr) => agg + curr, 0),
         ),
@@ -67,7 +67,10 @@ export const FinalPage = (props) => {
   const options = {
     scale: {
       ticks: {suggestedMin:0,suggestedMax: 21 },
-    }
+      gridLines: {color:'grey'},
+      pointLabels: {fontSize: 14 },
+      angleLines: { color: 'grey' },
+   }
   };
   const categoryScore = props.surveyScore.map((category) =>
   category.reduce((agg, curr) => agg + curr, 0));

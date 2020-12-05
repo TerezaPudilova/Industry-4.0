@@ -274,15 +274,32 @@ export const ValidationSchemaExample = () => (
           // same shape as initial values
           // sem musim přidat něco, co provede validaci??
           console.log(values);
+          alert(1)
           db.collection('Registrace').add({
-            jmenoPrijmeni: values.firstName + ' ' + values.lastName,
+            jmenoPrijmeni: values.jmeno+' '+values.prijmeni,
             email: values.email,
-            // TODO: Dodělat podle potřebných parametrů
-          });
-        }}
+            telefon: values.kontaktniTelefon,
+            nazevFirmy: values.nazevFirmy,
+            pracovniPozice: values.pracovniPozice,
+            udaje: values.udaje,
+            newsletter: values.newsletter,
+        })}}
       >
         {({ errors, touched }) => (
-          <Form>
+          <Form onSubmit={(values) => {
+            // same shape as initial values
+            // sem musim přidat něco, co provede validaci??
+            console.log(values);
+            alert(1);
+            db.collection('Registrace').add({
+              jmenoPrijmeni: values.jmeno+' '+values.prijmeni,
+              email: values.email,
+              telefon: values.kontaktniTelefon,
+              nazevFirmy: values.nazevFirmy,
+              pracovniPozice: values.pracovniPozice,
+              udaje: values.udaje,
+              newsletter: values.newsletter,
+          })}}>
             <FormSemantic>
               <Field
                 name="firstName"
