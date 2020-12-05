@@ -132,7 +132,7 @@ const Survey = (props) => {
           </Link>
         ) : (
           <Link to={nextUrl}>
-            <Button onClick={onNextHandler} disabled={categoryIndex === 6}>
+            <Button primary onClick={onNextHandler} disabled={categoryIndex === 6}>
               Další
             </Button>
           </Link>

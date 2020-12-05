@@ -90,7 +90,7 @@ export const FinalPage = (props) => {
       <FullWidthContainer>
         <Container>
 
-          <Button onClick={() => PrintToPdf()}>Výslední správu vygenerovat do pdf</Button>
+          
           <Title1>
             <h1>
               Vaše celkové skóre v auditu připravenosti na Industry 4.0 je {Math.round(resultScore)}</h1> 
@@ -104,6 +104,7 @@ export const FinalPage = (props) => {
             zprávu je možné ihned vytisknout, nebo vygenerovat ve formátu pdf a
             zaslat na vaší emailovou adresu zadanou při registraci.{' '}
           </Text1>
+          <Button secondary onClick={() => PrintToPdf()}>Výslední správu vygenerovat do pdf</Button>
           <Title2>
             <h1>
               Návod na čtení výsledků dosáhnutých v jednotlivých oblastech
