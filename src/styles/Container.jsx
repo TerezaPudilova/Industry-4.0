@@ -152,6 +152,7 @@ export const RegistryForm = styled.div`
   max-width: 640px;
   margin: auto;
   text-align: center;
+  padding-bottom: 48px;
 `;
 
 export const FooterPart = styled.div`
@@ -180,12 +181,11 @@ export const FooterMiddleItem = styled.div`
 
 export const SurveyDesc = styled.div`
   padding: 48px;
+  line-height: 1.6em;
 `;
 
 export const SurveyInstruction = styled.div`
   padding-left: 32px;
   padding-right: 32px;
-  margin-bottom: 32px;
 `;
-
 

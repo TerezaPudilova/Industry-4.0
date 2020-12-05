@@ -13,6 +13,7 @@ import { RegistryForm, Title1, Text1 } from '../styles/Container';
 import { Menu } from '../components/menu';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import { Footer } from './footer';
 
 /* const RegisterformItem = (props) => {
   const [value, setValue] = useState('');
@@ -254,207 +255,211 @@ const SignupSchema = Yup.object().shape({
 export const ValidationSchemaExample = () => {
   const history = useHistory();
   return (
-  <>
-    <Menu />
-    <Container>
-      <RegistryForm>
-        <Title1>Registrace</Title1>
-        <Text1>Pro zobrazení výsledků se prosím registrujte</Text1>
-        <Formik
-          initialValues={{
-            firstName: '',
-            lastName: '',
-            email: '',
-            occupation: '',
-            company: '',
-            souhlasUdaje: false,
-            souhlasNewSletter: false,
-          }}
-          validationSchema={SignupSchema}
-          validateOnChange={false}
-          validateOnBlur={false}
-          onSubmit={(values) => {
-            // same shape as initial values
-            // sem musim přidat něco, co provede validaci??
-            console.log(values);
-            alert(1);
-            db.collection('Registrace').add({
-              jmenoPrijmeni: values.firstName + ' ' + values.lastName,
-              email: values.email,
-              /* telefon: values.kontaktniTelefon, */
-              nazevFirmy: values.company,
-              pracovniPozice: values.occupation,
-              udaje: values.souhlasUdaje,
-              newsletter: values.souhlasNewSletter,
-            }).then(() => {
-              history.push('/vysledky')
-            })
-          }}
-        >
-          {({ errors, touched, handleSubmit }) => (
-            <Form>
-              <FormSemantic>
-                <Field
-                  name="firstName"
-                  render={({ field }) => {
-                    return (
-                      <FormSemantic.Field>
-                        <FormSemantic.Input
-                          {...field}
-                          error={
-                            errors.firstName && {
-                              content: errors.firstName,
-                              pointing: 'below',
+    <>
+      <Menu />
+      <Container>
+        <RegistryForm>
+          <Title1>Registrace</Title1>
+          <Text1>Pro zobrazení výsledků se prosím registrujte</Text1>
+          <Formik
+            initialValues={{
+              firstName: '',
+              lastName: '',
+              email: '',
+              occupation: '',
+              company: '',
+              souhlasUdaje: false,
+              souhlasNewSletter: false,
+            }}
+            validationSchema={SignupSchema}
+            validateOnChange={false}
+            validateOnBlur={false}
+            onSubmit={(values) => {
+              console.log(values);
+              db.collection('Registrace')
+                .add({
+                  jmenoPrijmeni: values.firstName + ' ' + values.lastName,
+                  email: values.email,
+                  
+                  nazevFirmy: values.company,
+                  pracovniPozice: values.occupation,
+                  udaje: values.souhlasUdaje,
+                  newsletter: values.souhlasNewSletter,
+                })
+                .then(() => {
+                  history.push('/vysledky');
+                });
+            }}
+          >
+            {({ errors, touched, handleSubmit }) => (
+              <Form>
+                <FormSemantic>
+                  <Field
+                    name="firstName"
+                    render={({ field }) => {
+                      return (
+                        <FormSemantic.Field>
+                          <FormSemantic.Input
+                            {...field}
+                            error={
+                              errors.firstName && {
+                                content: errors.firstName,
+                                pointing: 'below',
+                              }
                             }
-                          }
-                          label="Jméno"
-                          placeholder="Jméno"
-                          fluid
-                        />
-                      </FormSemantic.Field>
-                    );
-                  }}
-                />
-                <Field
-                  name="lastName"
-                  render={({ field }) => {
-                    return (
-                      <FormSemantic.Field>
-                        <FormSemantic.Input
-                          {...field}
-                          error={
-                            errors.lastName && {
-                              content: errors.lastName,
-                              pointing: 'below',
+                            label="Jméno"
+                            placeholder="Jméno"
+                            fluid
+                          />
+                        </FormSemantic.Field>
+                      );
+                    }}
+                  />
+                  <Field
+                    name="lastName"
+                    render={({ field }) => {
+                      return (
+                        <FormSemantic.Field>
+                          <FormSemantic.Input
+                            {...field}
+                            error={
+                              errors.lastName && {
+                                content: errors.lastName,
+                                pointing: 'below',
+                              }
                             }
-                          }
-                          label="Příjmení"
-                          placeholder="Příjmení"
-                          fluid
-                        />
-                      </FormSemantic.Field>
-                    );
-                  }}
-                />
-                <Field
-                  name="email"
-                  render={({ field }) => {
-                    return (
-                      <FormSemantic.Field>
-                        <FormSemantic.Input
-                          {...field}
-                          error={
-                            errors.email && {
-                              content: errors.email,
-                              pointing: 'below',
+                            label="Příjmení"
+                            placeholder="Příjmení"
+                            fluid
+                          />
+                        </FormSemantic.Field>
+                      );
+                    }}
+                  />
+                  <Field
+                    name="email"
+                    render={({ field }) => {
+                      return (
+                        <FormSemantic.Field>
+                          <FormSemantic.Input
+                            {...field}
+                            error={
+                              errors.email && {
+                                content: errors.email,
+                                pointing: 'below',
+                              }
                             }
-                          }
-                          label="Email"
-                          placeholder="Email"
-                          fluid
-                        />
-                      </FormSemantic.Field>
-                    );
-                  }}
-                />
-                <Field
-                  name="occupation"
-                  render={({ field }) => {
-                    return (
-                      <FormSemantic.Field>
-                        <FormSemantic.Input
-                          {...field}
-                          error={
-                            errors.occupation && {
-                              content: errors.occupation,
-                              pointing: 'below',
+                            label="Email"
+                            placeholder="Email"
+                            fluid
+                          />
+                        </FormSemantic.Field>
+                      );
+                    }}
+                  />
+                  <Field
+                    name="occupation"
+                    render={({ field }) => {
+                      return (
+                        <FormSemantic.Field>
+                          <FormSemantic.Input
+                            {...field}
+                            error={
+                              errors.occupation && {
+                                content: errors.occupation,
+                                pointing: 'below',
+                              }
                             }
-                          }
-                          label="Funkce"
-                          placeholder="Funkce"
-                          fluid
-                        />
-                      </FormSemantic.Field>
-                    );
-                  }}
-                />
-                <Field
-                  name="company"
-                  render={({ field }) => {
-                    return (
-                      <FormSemantic.Field>
-                        <FormSemantic.Input
-                          {...field}
-                          error={
-                            errors.company && {
-                              content: errors.company,
-                              pointing: 'below',
+                            label="Funkce"
+                            placeholder="Funkce"
+                            fluid
+                          />
+                        </FormSemantic.Field>
+                      );
+                    }}
+                  />
+                  <Field
+                    name="company"
+                    render={({ field }) => {
+                      return (
+                        <FormSemantic.Field>
+                          <FormSemantic.Input
+                            {...field}
+                            error={
+                              errors.company && {
+                                content: errors.company,
+                                pointing: 'below',
+                              }
                             }
-                          }
-                          label="Společnost"
-                          placeholder="Společnost"
-                          fluid
-                        />
-                      </FormSemantic.Field>
-                    );
-                  }}
-                />
-                <Field
-                  type="checkbox"
-                  name="souhlasUdaje"
-                  render={({ field }) => {
-                    return (
-                      <FormSemantic.Field>
-                        <FormSemantic.Checkbox
-                          {...field}
-                          /* onChange={(e, {
-                          checked
-                        })=> { field.onChange(checked)
-
-                        } } */
-                          error={
-                            errors.souhlasUdaje && {
-                              content: errors.souhlasUdaje,
-                              pointing: 'below',
+                            label="Společnost"
+                            placeholder="Společnost"
+                            fluid
+                          />
+                        </FormSemantic.Field>
+                      );
+                    }}
+                  />
+                  <Field
+                    name="souhlasUdaje"
+                    render={({ field, form }) => {
+                      return (
+                        <FormSemantic.Field>
+                          <Checkbox
+                            onChange={() => {
+                              form.setFieldValue('souhlasUdaje', !field.value);
+                            }}
+                            name="souhlasUdaje"
+                            error={
+                              errors.souhlasUdaje && {
+                                content: errors.souhlasUdaje,
+                                pointing: 'below',
+                              }
                             }
-                          }
-                          label="Souhlasím se zpracováním údajů dle Zásad zpracování osobních údajů
+                            label="Souhlasím se zpracováním údajů dle Zásad zpracování osobních údajů
                      společnosti FBE, s.r.o"
-                          fluid
-                        />
-                      </FormSemantic.Field>
-                    );
-                  }}
-                />
-                <Field
-                  name="souhlasNewsletter"
-                  render={({ field }) => {
-                    return (
-                      <FormSemantic.Field>
-                        <FormSemantic.Checkbox
-                          {...field}
-                          error={
-                            errors.souhlasNewsletter && {
-                              content: errors.souhlasNewsletter,
-                              pointing: 'below',
+                            fluid
+                          />
+                        </FormSemantic.Field>
+                      );
+                    }}
+                  />
+                  <Field
+                    name="souhlasNewsletter"
+                    render={({ field, form }) => {
+                      return (
+                        <FormSemantic.Field>
+                          <Checkbox
+                            onChange={() => {
+                              form.setFieldValue(
+                                'souhlasNewsletter',
+                                !field.value,
+                              );
+                            }}
+                            name="souhlasNewsletter"
+                            error={
+                              errors.souhlasNewsletter && {
+                                content: errors.souhlasNewsletter,
+                                pointing: 'below',
+                              }
                             }
-                          }
-                          label="Souhlasím
+                            label="Souhlasím
                      se zasíláním Newsletteru společnosti FBE, s.r.o 1xměsíčně"
-                          fluid
-                        />
-                      </FormSemantic.Field>
-                    );
-                  }}
-                />
+                            fluid
+                          />
+                        </FormSemantic.Field>
+                      );
+                    }}
+                  />
 
-                <Button type="submit">Uložit a pokračovat na výsledky</Button>
-                <br />
-              </FormSemantic>
-            </Form>
-          )}
-        </Formik>
-      </RegistryForm>
-    </Container>
-  </>)
+                  <Button type="submit">Uložit a pokračovat na výsledky</Button>
+                  <br />
+                </FormSemantic>
+              </Form>
+            )}
+          </Formik>
+        </RegistryForm>
+      </Container>
+      <Footer />
+    </>
+  );
 };
