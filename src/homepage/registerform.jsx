@@ -248,8 +248,10 @@ const SignupSchema = Yup.object().shape({
     .min(2, 'Too Short!')
     .max(50, 'Too Long!')
     .required('Required'),
-  souhlasUdaje: Yup.boolean().required('Required'),
-  souhlasNewSletter: Yup.boolean(),
+  souhlasUdaje: Yup.boolean()
+    .required('Field must be checked')
+    .oneOf([true], 'Field must be checked'),
+  souhlasNewsletter: Yup.boolean()
 });
 
 export const ValidationSchemaExample = () => {
@@ -269,7 +271,7 @@ export const ValidationSchemaExample = () => {
               occupation: '',
               company: '',
               souhlasUdaje: false,
-              souhlasNewSletter: false,
+              souhlasNewsletter: false,
             }}
             validationSchema={SignupSchema}
             validateOnChange={false}
@@ -280,11 +282,11 @@ export const ValidationSchemaExample = () => {
                 .add({
                   jmenoPrijmeni: values.firstName + ' ' + values.lastName,
                   email: values.email,
-                  
+
                   nazevFirmy: values.company,
                   pracovniPozice: values.occupation,
                   udaje: values.souhlasUdaje,
-                  newsletter: values.souhlasNewSletter,
+                  newsletter: values.souhlasNewsletter,
                 })
                 .then(() => {
                   history.push('/vysledky');
@@ -417,7 +419,7 @@ export const ValidationSchemaExample = () => {
                             }
                             label="Souhlasím se zpracováním údajů dle Zásad zpracování osobních údajů
                      společnosti FBE, s.r.o"
-                            fluid
+                            /* fluid */
                           />
                         </FormSemantic.Field>
                       );
@@ -444,7 +446,7 @@ export const ValidationSchemaExample = () => {
                             }
                             label="Souhlasím
                      se zasíláním Newsletteru společnosti FBE, s.r.o 1xměsíčně"
-                            fluid
+                            /* fluid */
                           />
                         </FormSemantic.Field>
                       );
