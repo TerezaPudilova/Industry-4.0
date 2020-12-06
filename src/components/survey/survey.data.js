@@ -11,7 +11,7 @@ const surveyTestData = {
             {
               text:
                 'Rozhodování je realizováno na základě dat, stejně jako řízení procesů, anebo zlepšování. Data pokrývají všechny procesy.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -21,7 +21,7 @@ const surveyTestData = {
             {
               text:
                 'Měřeny nejsou ani nejdůležitější procesy. Když jsou, tak se při řízení moc nepoužívají.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -31,7 +31,7 @@ const surveyTestData = {
             {
               text:
                 'Když je to možné a dává to smysl, jsou získavány spojitá data.',
-              number: 1,
+              number: 3,
             },
             {
               text: 'Převládají data atributivní, občas se najdou i spojité.',
@@ -40,7 +40,7 @@ const surveyTestData = {
             {
               text:
                 'Data jsou maximálně kvalitativního charakteru, anebo nejsou žádné.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -50,14 +50,14 @@ const surveyTestData = {
             {
               text:
                 'Měřící systméy jsou způsobilé a jejich způsobilost je ověřena (například metodou MSA).',
-              number: 1,
+              number: 3,
             },
             {
               text:
                 'Nejdůležitější měřící systémy jsou verifikovány, jinak způsobilost měřícího systému řešena není.',
               number: 2,
             },
-            { text: 'Měřící systémy jsou nezpůsobilé.', number: 3 },
+            { text: 'Měřící systémy jsou nezpůsobilé.', number: 1 },
           ],
         },
         {
@@ -66,7 +66,7 @@ const surveyTestData = {
             {
               text:
                 'Data jsou zpracovávany online a jsou vyhodnocovány na základě relevantních statistických metod (např. podle ISO 8258)',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -76,7 +76,7 @@ const surveyTestData = {
             {
               text:
                 'Data jsou zaznamenávany, ale nepracuje sa  s nimi dál, pokud si to jen konkrétní situace nevyžaduje.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -85,7 +85,7 @@ const surveyTestData = {
           answers: [
             {
               text: 'Automaticky, digitálně, transparentně -i  s metadaty.',
-              number: 1,
+              number: 3,
             },
             {
               text: 'Data jsou přepisovány do digitální podoby s opožděním.',
@@ -94,7 +94,7 @@ const surveyTestData = {
             {
               text:
                 'Data jsou jenom v analogovém (zejména papírovém formátu), anebo se nezaznamenávají.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -104,7 +104,7 @@ const surveyTestData = {
             {
               text:
                 'Existuje jasný a efektivní způsob zásahu do procesu v případě nestandardních hodnot: například řešení pomocí 8D anebo PDCA. Možné zásahy a řešení jsou hierarchicky jasně uspořádany(eskalační pravidla)',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -114,7 +114,7 @@ const surveyTestData = {
             {
               text:
                 'Zasahujeme jenom při výrazném nebo několikanásobném překročení stanovených hranic.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -124,7 +124,7 @@ const surveyTestData = {
             {
               text:
                 'Data získavané z různých procesů jsou navzájem jednoduše přepojitelné na základě metadat - a vytvářejí spolu jeden obraz.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -134,7 +134,7 @@ const surveyTestData = {
             {
               text:
                 'Nekompatibilní datové záznamy  neumožňují data reálně porovnávat, slučovat, nebo smysluplne třídit.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -151,7 +151,7 @@ const surveyTestData = {
             {
               text:
                 'Každý zaměstnanec ví, jak eliminovat plýtvání a většina zaměstnanců přispívá ke změnám nápady na zlepšení.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -161,7 +161,7 @@ const surveyTestData = {
             {
               text:
                 'Není stanoven ani čas, ani způsoby motivace, ani zdroje pro implementaci a realizaci lean. ',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -171,7 +171,7 @@ const surveyTestData = {
             {
               text:
                 'Zlepšování je realizováno na vícero úrovních: od jednoduchých kaizenů, přes organizované workshopy (PDCA DMAIC), ke strategickému zlepšování. Je organizováno systematicky.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -181,7 +181,7 @@ const surveyTestData = {
             {
               text:
                 'Chybí jakákoliv metoda, struktura nebo systém podporující generování nápadů a zlepšování. ',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -191,7 +191,7 @@ const surveyTestData = {
             {
               text:
                 'Většina kořenových příčín je determinována a jejich eliminace je dobrým základem pro kontinuální zlepšování. (Odstraňování symptomů a projevů je realizováno jenom v případě, že eliminace kořenových příčin není efektivní)',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -201,7 +201,7 @@ const surveyTestData = {
             {
               text:
                 'Problémy se opakují. Společnost se snaží fungovat i s nima.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -211,10 +211,10 @@ const surveyTestData = {
             {
               text:
                 'Každodenně - je to část firemní kultury: SFM, každodenní řízení, steering committee.',
-              number: 1,
+              number: 3,
             },
             { text: 'Cílené zlepšovací aktivity', number: 2 },
-            { text: 'Řešíme, když to ušetří peníze', number: 3 },
+            { text: 'Řešíme, když to ušetří peníze', number: 1 },
           ],
         },
         {
@@ -223,7 +223,7 @@ const surveyTestData = {
             {
               text:
                 'Základní procesy, řídicí a stearingové procesy, podpůrné procesy ',
-              number: 1,
+              number: 3,
             },
             {
               text: 'Jenom vybrané oblasti, ale přes celé oddělení.',
@@ -232,7 +232,7 @@ const surveyTestData = {
             {
               text:
                 'Nerovnomerně rozloženo, soustředěno jenom na několik oblastí.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -242,7 +242,7 @@ const surveyTestData = {
             {
               text:
                 'Zaměstnanci vědí, že lean jim pomůže zjednodušit jejich práci a zároveň přispívat k úspechu společnosti.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -252,7 +252,7 @@ const surveyTestData = {
             {
               text:
                 'Pro zaměstnance je lean jenom dalším způsobem, jak je firma může přinutit k vyššímu výkonu.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -262,7 +262,7 @@ const surveyTestData = {
             {
               text:
                 'Společnost se zaměřuje na lean (kobetsu kaizen = cílené zlepšování) předtím, jak se rozhoduje o investicích. Investice nejsou závislé od zeštíhlování.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -272,7 +272,7 @@ const surveyTestData = {
             {
               text:
                 'Investuje se do zlepšení vybraných procesů. Štíhlé aktivity se ale zaměřují na jiné procesy, kterých se investice nedotknou.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -289,7 +289,7 @@ const surveyTestData = {
             {
               text:
                 'Máme pravidelné audity BOZP s dobrými vysledky, jasně stanovené odpovědnosti a funkční systém nápravních opatření.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -299,7 +299,7 @@ const surveyTestData = {
             {
               text:
                 'Systém BOZP máme jenom na papíře, audity jsou vyvolány jen externí potřebou (zákazník, státní orgány).',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -307,9 +307,9 @@ const surveyTestData = {
           question:
             'Jaké jsou Vaše výsledky  v TRIR? (na milión pracovních hodin)',
           answers: [
-            { text: 'pod 5', number: 1 },
+            { text: 'pod 5', number: 3 },
             { text: '5 az 30', number: 2 },
-            { text: 'nad 30', number: 3 },
+            { text: 'nad 30', number: 1 },
           ],
         },
         {
@@ -318,7 +318,7 @@ const surveyTestData = {
             {
               text:
                 'Společnost má detailně rozpracovanou procesní strukturu (mapu), rozdělenou na: řídící, hlavní a podpůrné procesy.  Procesy jsou dekomponované až na jednotlivé operace.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -327,7 +327,7 @@ const surveyTestData = {
             },
             {
               text: 'Společnost nemá systematicky popsané procesy.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -337,7 +337,7 @@ const surveyTestData = {
             {
               text:
                 'Pracovní postupy, postupy pro údržbu a kontrolu jsou  kompletně zpracované, vizualizované a aktuální. Využívají logiku OPL.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -347,7 +347,7 @@ const surveyTestData = {
             {
               text:
                 'Pracovní standardy jsou formálně zpracované, anebo neexistují. ',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -357,7 +357,7 @@ const surveyTestData = {
             {
               text:
                 'Vizuální  management je jednoznačný, podporuje orientaci na pracovišti, bezpečnost při práci a vzájemný přenos informací.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -367,7 +367,7 @@ const surveyTestData = {
             {
               text:
                 'Vizuální management plní více-méně dekorační funkci. Není úplně zaměřen na podporu a fungování procesů.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -377,7 +377,7 @@ const surveyTestData = {
             {
               text:
                 'Kopíruje strukturu procesů společnosti.  Měni se v případě změny v procesní struktuře.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -387,7 +387,7 @@ const surveyTestData = {
             {
               text:
                 'Organizační struktura nevychází z procesní struktury. (Korelace pozicí a procesů je menší než 80%)',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -397,7 +397,7 @@ const surveyTestData = {
             {
               text:
                 'Existují přesné požadavky na kvalifikaci zamestnanců v jednotlivých procesech a na jejich zaškolování. Firma má zpracovaný plán školení a kvalifikační matice.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -407,7 +407,7 @@ const surveyTestData = {
             {
               text:
                 'Popis kvalifikace potřebné pro jednotlivé  procesy neexistuje. Není stanoven ani postup zaškolení.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -421,9 +421,9 @@ const surveyTestData = {
         {
           question: 'Efektivita procesního cyklu (VAT), poměr přidané hodnoty',
           answers: [
-            { text: 'víc jak 5%', number: 1 },
+            { text: 'víc jak 5%', number: 3 },
             { text: '1-5%', number: 2 },
-            { text: 'méně jak 1%', number: 3 },
+            { text: 'méně jak 1%', number: 1 },
           ],
         },
         {
@@ -432,12 +432,12 @@ const surveyTestData = {
             {
               text:
                 'V první řadě na základě odstranění plýtvánía obzvláště redukce zásob a čekání v procesu.',
-              number: 1,
+              number: 3,
             },
             { text: 'Odstaňování/ rozšiřování úzkých míst.', number: 2 },
             {
               text: 'Zkracování nebo zrychlování pracovních aktivit.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -446,7 +446,7 @@ const surveyTestData = {
           answers: [
             {
               text: 'Neexistuje, materiálový tok je jenom jedním směrem.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -455,7 +455,7 @@ const surveyTestData = {
             },
             {
               text: 'Cyklení se běžně vyskytuj v provozu. Není zmapováno.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -465,7 +465,7 @@ const surveyTestData = {
             {
               text:
                 'Rozhraní jsou hlavním zdrojem problémů a proto se jich snažíme z toku odstranit.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -475,7 +475,7 @@ const surveyTestData = {
             {
               text:
                 'Rozhraní nejsou podstatné, lidi jich musí zvládnout, neřešíme je.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -485,7 +485,7 @@ const surveyTestData = {
             {
               text:
                 'V pravidelných intervalech přehodnocujeme důležitost produktových rodin na základě vícero parametrů (např. cena, předpovědetelnost, variabilita, množství, …)',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -494,7 +494,7 @@ const surveyTestData = {
             },
             {
               text: 'Všechny produktové rodiny mají rovnaký přístup.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -504,7 +504,7 @@ const surveyTestData = {
             {
               text:
                 'Celý proces od první komunikace se zákazníkem, přes přijetí objednávky, vytváření hodnoty, dodání až po zaplacení zákazníkem',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -514,7 +514,7 @@ const surveyTestData = {
             {
               text:
                 'Samotní výroba (v případě nevýroby jenom zprocesování), za kterou nám zákazník platí.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -524,7 +524,7 @@ const surveyTestData = {
             {
               text:
                 'Update na denní bázi, zaměstnanci znají úzké místa, rozumějí KPI a problémům, které vyplývají z VSM. Mng rozhoduje na základě aktuálních dat z VSM.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -534,7 +534,7 @@ const surveyTestData = {
             {
               text:
                 'Údaje získané při mapování hodnotových toků se využívají jenom při cíleném zlepšení.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -551,14 +551,14 @@ const surveyTestData = {
             {
               text:
                 'Komunikační plán je součásti procesních standardů, je popsán jako jedna z části flowchartů a obsahuje i detailní parametry komunikace (kanály, odpovědnosti, moment komunikace, standardizovaný rozsah, ...)',
-              number: 1,
+              number: 3,
             },
             {
               text:
                 'Komunikační plán existuje, ale není dostatečný (chybí napřiklad kanály, odpovědnosti, anebo popis momentu komunikace)',
               number: 2,
             },
-            { text: 'Jenom pro projekty a change managemnt', number: 3 },
+            { text: 'Jenom pro projekty a change managemnt', number: 1 },
           ],
         },
         {
@@ -567,7 +567,7 @@ const surveyTestData = {
             {
               text:
                 'Komunikační plán je součásti pracovních, údržbářských a kvalitářských postupů. Je možné z nich vyextrahovat - a popisuje ne jenom formu, ale i účel komunikace člověk-stroj.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -577,7 +577,7 @@ const surveyTestData = {
             {
               text:
                 'Komunikace člověk-stroj není standardizována, každé zařízení generuje jiný typ informací.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -587,7 +587,7 @@ const surveyTestData = {
             {
               text:
                 'Mapa zachytáva všechny zařízení naší společnosti, komunikační kanály, frekvencii a momenty komunikace, účely komunikace, používané protokoly, komunikační uzly, jakoij potenciál další komunikace s ohledem na přidanou hodnotu.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -597,7 +597,7 @@ const surveyTestData = {
             {
               text:
                 'Interakce stroj-stroj jsou naprogramovány tam, kde je jich potřeba. Mimo ně spolu stroje i tak nevědí  komunikovat.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -607,7 +607,7 @@ const surveyTestData = {
             {
               text:
                 'Ano, díky standardizaci interakcí je bez problémů možné zvládnout i zložité interakční  momenty / období. Každý má potřebné informace.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -617,7 +617,7 @@ const surveyTestData = {
             {
               text:
                 'Jenom na poradách, workshopech a při přestavování technologií. Jinak ale komunikace firmy působí úplně komplexně za každý okolností, i když běží v každodenním  módu.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -627,7 +627,7 @@ const surveyTestData = {
             {
               text:
                 'V rámci externí komunikace jsou optimalizovány rozhraní, s cílem plynulého informačního a hodnotového toku.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -637,7 +637,7 @@ const surveyTestData = {
             {
               text:
                 'Na externí komunikaci existují single points of kontakt, které mají vše na starosti.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -647,7 +647,7 @@ const surveyTestData = {
             {
               text:
                 'Informace jsou ukládany v pravidelných (krátkých) intervalech, s jasní strukturou a metadaty. Informace z různých zdrojů je možné zesuladit. Jsou ukládany centrálně na dostupném místě. Jsou zabezpečeny proti zneužití.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -657,7 +657,7 @@ const surveyTestData = {
             {
               text:
                 'Převládá lokální ukládání informací nebo dokonce archivace v papírové formě.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -667,7 +667,7 @@ const surveyTestData = {
             {
               text:
                 'Informace jsou dostupné na základě popisů pracovního místa a pozice v komunikačním plánu. Všechny informace, které nejsou důležité pro bezpečnost jsou přůstupné zaměstnancům. Směrem venku jsou přístupy kódovány.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -677,7 +677,7 @@ const surveyTestData = {
             {
               text:
                 'Informace jsou často fyzicky nedostupné kvůli způsobu jejich ukládání.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -694,14 +694,14 @@ const surveyTestData = {
             {
               text:
                 'Záleží od typu produktu, využívají se různé principy (tah, na zakázku, dle předpovědi).',
-              number: 1,
+              number: 3,
             },
             {
               text:
                 'Existuje zavedený princip tahu, nebo alespoň nějaký jiný odpovídající princip plánování.',
               number: 2,
             },
-            { text: 'Reaktivní plánování.', number: 3 },
+            { text: 'Reaktivní plánování.', number: 1 },
           ],
         },
         {
@@ -710,14 +710,14 @@ const surveyTestData = {
             {
               text:
                 'Pro velkou část zákazníků je společnost strategickým partnerem. Pro jiné zákazníky alespoň partnerem, se kterým se dá plánovat.',
-              number: 1,
+              number: 3,
             },
             {
               text:
                 'Pro část zákazníků je společnost partnerem zahrnutým v plánování, pro ostatní alespoň preferovaným partnerem',
               number: 2,
             },
-            { text: 'Společnost je jenom transakčním partnerem', number: 3 },
+            { text: 'Společnost je jenom transakčním partnerem', number: 1 },
           ],
         },
         {
@@ -726,7 +726,7 @@ const surveyTestData = {
             {
               text:
                 'Společnost má strategické partnery na straně dodavatelů, u jiných dodavatelů využívá minimálně dual sourcing a drží si je na úrovni plánovacích partnerů.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -736,7 +736,7 @@ const surveyTestData = {
             {
               text:
                 'Společnost nemá strategického partnera na straně dodavatelů. Většina dodavatelů (90%) jsou jenom transakční  partneři.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -746,7 +746,7 @@ const surveyTestData = {
             {
               text:
                 'Všechny společnosti v SCM vidí (v nějaké formě) objednávky anebo i plány konečných zákazníků přímo online, bez zdržování.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -755,7 +755,7 @@ const surveyTestData = {
             },
             {
               text: 'Dodavatelé nevidí vůbec požadavky zákazníků společnosti.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -765,14 +765,14 @@ const surveyTestData = {
             {
               text:
                 'Plánování je postaveno na kombinaci aktuálních dat z VSM, dat od zákazníků a dodavatelů',
-              number: 1,
+              number: 3,
             },
             {
               text:
                 'Plánování zohledňuje zákaznická data, nezohledňuje dodavatelé anebo VSM.',
               number: 2,
             },
-            { text: 'Plánování reaguje na aktuální problémy.', number: 3 },
+            { text: 'Plánování reaguje na aktuální problémy.', number: 1 },
           ],
         },
         {
@@ -781,7 +781,7 @@ const surveyTestData = {
             {
               text:
                 'Plánování je vnímané jako celek nejen za společnost, ale za celý dodavatelsko-odberatelský řetězec.',
-              number: 1,
+              number: 3,
             },
             {
               text: 'Plánování je vnímáno jako celek za společnost.',
@@ -790,7 +790,7 @@ const surveyTestData = {
             {
               text:
                 'Plánování je záležitostí jednotlivých oddělení, celek je plánovaný jenom cca 1-2x rocne.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -800,7 +800,7 @@ const surveyTestData = {
             {
               text:
                 'Plánovací rozhodnutí jsou postaveny na datech. Existují přesná pravidla pro rozhodování a plánování a jsou dodržována. V případě nevhodnosti se volí nouzová strategie.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -810,7 +810,7 @@ const surveyTestData = {
             {
               text:
                 'Plánují zaměstnanci - na základě svých zkušeností a odhadů.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -827,14 +827,14 @@ const surveyTestData = {
             {
               text:
                 'Zařízení a systémy se dokáži přizpůsobit novým požadavkům - jsou na to stavěné (bez zbytečného programování a testování), běžně jsou využivány na vícero produktů.',
-              number: 1,
+              number: 3,
             },
             {
               text:
                 'Zařízení a systémy je možné přeprogramovat, ale trvá to príliš dlouho, nebo je to finančně nákladné.',
               number: 2,
             },
-            { text: 'Jednoúčelové zařízení a systémy.', number: 3 },
+            { text: 'Jednoúčelové zařízení a systémy.', number: 1 },
           ],
         },
         {
@@ -843,7 +843,7 @@ const surveyTestData = {
             {
               text:
                 'Rozhraní disponují otevřenými (open source) protokoly, které umožňují výměnu informací s okolitým světem.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -853,7 +853,7 @@ const surveyTestData = {
             {
               text:
                 'Na rozhraních je potřebný člověk nebo PLC, kdy má fungovat komunikace s jiným systémom.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -863,7 +863,7 @@ const surveyTestData = {
             {
               text:
                 'Všechny týmové pozice mají zastupitelnost a pracovníci jsou standardně rozvíjeni na základě skills matrix, která slouží i jako matice flexibility. Management ji zohledňuje při strategii rozvoje a motivaci.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -873,7 +873,7 @@ const surveyTestData = {
             {
               text:
                 'Pracovníci nejsou motivováni k flexibilitě, vykonávají jenom omezené počty úkonů.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -883,7 +883,7 @@ const surveyTestData = {
             {
               text:
                 'Procesy jsou standardizovány a jednoduše přizpůsobitelné změnám na trhu.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -892,7 +892,7 @@ const surveyTestData = {
             },
             {
               text: 'Změny jsou vždy novm projektem (change management).',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -902,7 +902,7 @@ const surveyTestData = {
             {
               text:
                 'Všechny systémy jsou napojeny  na jednu flexibilní  platformu.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -912,7 +912,7 @@ const surveyTestData = {
             {
               text:
                 'Služby či zařízení mají svoje vlastní platformy a jejich integrace je komplikovaná.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -922,7 +922,7 @@ const surveyTestData = {
             {
               text:
                 'Výkyvy na trhu +/- 30% jsou zvládnutelné bez zásahů, u vyššího rastu je potřebná multiplikace systémových prvků, ale ne procesů.',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -932,7 +932,7 @@ const surveyTestData = {
             {
               text:
                 'Růst není možný, už teď je společnost za limitem přetížení.',
-              number: 3,
+              number: 1,
             },
           ],
         },
@@ -942,7 +942,7 @@ const surveyTestData = {
             {
               text:
                 'Škálovatelnost je základní vlastností používaných platforem a technologií. Není potřeba žádných externích odborníků na škálovatelnost',
-              number: 1,
+              number: 3,
             },
             {
               text:
@@ -952,7 +952,7 @@ const surveyTestData = {
             {
               text:
                 'Škálovatelnost je spojena s nákupem jiných služeb, nebo technologií.',
-              number: 3,
+              number: 1,
             },
           ],
         },
