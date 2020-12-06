@@ -72,18 +72,31 @@ export const Text1 = styled.p`
 export const Title2Left = styled.h2`
   font-size: 20px;
   font-weight: 400;
-  text-align: left;
+  text-align: center;
   padding: 25px;
-
+  /* padding-left: 20px; */
   margin-bottom: 0px;
+  /* margin-left: 42px; */
 `;
 
 export const TextLeft = styled.p`
   font-size: 16px;
-  text-align: left;
+  text-align: center;
   padding: 25px;
   line-height: 1.6em;
   width: 450px;
+  margin: 0px;
+`;
+
+export const AboutSurvey = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  justify-content: center;
+`;
+
+export const AboutSurveyPart1 = styled.div`
+  width: 600px;
 `;
 
 export const QuestionTitle1 = styled.div`
@@ -130,10 +143,24 @@ export const TextFooter = styled.div`
 `;
 
 export const Contacts = styled.div`
-  max-width: 1280px;
-  display: flex;
   padding: 25px;
   margin: 25px;
+  ${media('>desktop')} {
+    padding: 0;
+    max-width: 1280px;
+    display: flex;
+    padding: 25px;
+    margin: 25px;
+  }
+  ${media('<=desktop', '>tablet')} {
+    text-align: -webkit-center;
+  }
+  ${media('<=tablet', '>phone')} {
+    text-align: -webkit-center;
+  }
+  ${media('<=phone')} {
+    text-align: -webkit-center;
+  }
 `;
 
 export const ContactsText = styled.div`
@@ -200,7 +227,7 @@ export const FooterMiddleItem = styled.div`
 `;
 
 export const SurveyDesc = styled.div`
-  padding: 28px;
+
 `;
 
 export const SurveyInstruction = styled.div`

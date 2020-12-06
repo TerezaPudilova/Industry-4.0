@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '../styles/variables.js';
-import media from "css-in-js-media";
+import media from 'css-in-js-media';
 import myImage from '../img/menu.png';
 
 export const Wrapper = styled.nav`
@@ -21,16 +21,19 @@ export const LinksItem = styled.a`
   color: ${colors.darkBlue};
 `;
 
-export const LinksMenu = styled.div`
+export const LinksMenu = styled.nav`
   padding: 25px;
   margin-right: 30px;
   font-size: 15px;
   font-weight: bold;
   text-transform: uppercase;
+
+  ${media('>desktop')}
   color: ${colors.darkBlue};
 
-  ${media("<=tablet", ">phone")} {
-    flex-direction: row;
+  ${media('<=tablet', '>phone')} {
+    flex-flow: column nowrap;
+    justify-content: space-around;
     width: 3rem;
     height: 3rem;
     padding: 0;

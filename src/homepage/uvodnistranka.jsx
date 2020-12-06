@@ -13,6 +13,8 @@ import {
   RobotiWrapper,
   ContainerIndustry,
   SurveyDesc,
+  AboutSurvey,
+  AboutSurveyPart1,
 } from '../styles/Container';
 import { colors } from '../styles/variables';
 import DefaultTemplate from '../templates/DefaultTemplate';
@@ -41,13 +43,14 @@ export const UvodniStranka = () => {
             potenciály na zlepšení.
           </Text1>
           <Buttons>
-            
-            <Button secondary href="#beforeYouStart">Začít</Button>
+            <Button secondary href="#beforeYouStart">
+              Začít
+            </Button>
           </Buttons>
         </Container>
         <RobotiWrapper>
           <Roboti>
-          <img src={roboti} width="600px" alt="graf" />
+            <img src={roboti} width="600px" alt="graf" />
           </Roboti>
         </RobotiWrapper>
         <FullWidthContainer>
@@ -68,28 +71,35 @@ export const UvodniStranka = () => {
         <FullWidthContainer bgColor={colors.darkBlue}>
           <Container>
             <SurveyDesc>
-            <Grid divided="vertically">
-              <Grid.Row columns={2}>
-                <Grid.Column>
-                  <Title2Left>
-                    Jednoduchý popis dotazníku a jeho funkčnosti
-                  </Title2Left>
-                  <TextLeft>
-                    Dotazník je rozdělen na 7 průřezových oblastí
-                    charakterizujících fungování firmy. Každá oblast
-                    obsahuje&nbsp;7 otázek s alternativami odpovědí.
-                    <br />
-                    <br />
-                    Výstupem z hodnocení je Závěrečná zpráva, která graficky
-                    znázorní úroveň vaší společnosti v definovaných
-                    oblastech.&nbsp;V závěru uvádí tipy na zlepšení.
-                  </TextLeft>
-                </Grid.Column>
-                <Grid.Column>
-                  <img src={graf} alt="graf" />
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
+              <Grid divided="vertically">
+                <Grid.Row columns={2}>
+                  <AboutSurvey>
+                    <Grid.Column>
+                      <AboutSurveyPart1>
+                        <Title2Left>
+                          Jednoduchý popis dotazníku a jeho funkčnosti
+                        </Title2Left>
+                        <TextLeft>
+                          Dotazník je rozdělen na 7 průřezových oblastí
+                          charakterizujících fungování firmy. Každá oblast
+                          obsahuje&nbsp;7 otázek s alternativami odpovědí.
+                          <br />
+                          <br />
+                          Výstupem z hodnocení je Závěrečná zpráva, která
+                          graficky znázorní úroveň vaší společnosti v
+                          definovaných oblastech.&nbsp;V závěru uvádí tipy na
+                          zlepšení.
+                        </TextLeft>
+                      </AboutSurveyPart1>
+                    </Grid.Column>
+                    <AboutSurveyPart1>
+                      <Grid.Column>
+                        <img src={graf} alt="graf" />
+                      </Grid.Column>
+                    </AboutSurveyPart1>
+                  </AboutSurvey>
+                </Grid.Row>
+              </Grid>
             </SurveyDesc>
           </Container>
         </FullWidthContainer>

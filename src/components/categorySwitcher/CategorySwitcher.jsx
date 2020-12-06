@@ -2,11 +2,27 @@ import styled from '@emotion/styled';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { colors } from '../../styles/variables';
+import media from 'css-in-js-media';
 
 const List = styled.ul`
-  display: flex;
+  font-size: 16px;
   margin: 32px 0;
   padding: 0;
+  ${media('>desktop')} {
+    padding: 0;
+    height: 120px;
+    display: flex;
+  }
+  ${media('<=desktop', '>tablet')} {
+    width: 640px;
+    text-align: -webkit-center;
+  }
+  ${media('<=tablet', '>phone')} {
+    text-align: -webkit-center;
+  }
+  ${media('<=phone')} {
+    text-align: -webkit-center;
+  }
 `;
 
 const ListItem = styled.li`

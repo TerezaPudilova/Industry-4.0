@@ -10,19 +10,38 @@ import {
 import styled from '@emotion/styled';
 import { Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import media from 'css-in-js-media';
 
 const List1 = styled.ul`
   display: flex;
   padding: 0;
   flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const ListNumber = styled.li`
   display: block;
   list-style: none;
-  padding: 0;
+  line-height: 1.6em;
+  /* padding: 0;
   width: 33.33333%;
-  height: 120px;
+  height: 120px; */
+  ${media('>desktop')} {
+    font-size: 16px;
+    padding: 0;
+    width: 33.33333%;
+    height: 120px;
+  }
+  ${media('<=desktop', '>tablet')} {
+    font-size: 16px;
+    width: 640px;
+  }
+  ${media('<=tablet', '>phone')} {
+    font-size: 16px;
+  }
+  ${media('<=phone')} {
+    font-size: 16px;
+  }
 `;
 
 const CategoryNumber = styled.div`
