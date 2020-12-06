@@ -21,6 +21,7 @@ import DefaultTemplate from '../templates/DefaultTemplate';
 import graf from '../img/graf.jpg';
 import roboti from '../img/roboti.png';
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 const Text = styled.div`
   font-size: 15px;

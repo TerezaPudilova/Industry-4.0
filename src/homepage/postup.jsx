@@ -66,7 +66,7 @@ const postup = [
   'Přibližný čas na zpracování celého dotazníku a vygenerování Závěrečné zprávy je cca 45-60 minut.',
   'Dotazník je nutné vyplnit najednou, průběžné výsledky se neukládají. Vyčleňte si prosím na to vhodný čas.',
   'Pro obdržení Závěrečné zprávy je potřeba zodpovědět všechny otázky a v závěru se zaregistrovat.',
-  'Závěrečnou zprávu je možné zaslat e-mailem na vámi uvedenou adresu ve formě pdf, případně ihned vytisknout.',
+  'Závěrečnou zprávu je možné vygenerovat do pdf.',
 ];
 
 export const Postup = () => {
