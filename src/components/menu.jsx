@@ -22,14 +22,14 @@ export const Menu = () => {
               <Links>
                 <Grid.Column width={10}>
                   <LinksMenu>
-                    <LinksItem>
+                    {/* <LinksItem>
                       <Link to="/dotaznik/:categoryCodeName">Dotazník</Link>
                     </LinksItem>
                     <Link to="/vysledky">Výslední správa</Link>
                     <LinksItem>
                       <Link to="/registrace">Registrace</Link>
                     </LinksItem>
-                    <LinksItem href="#footer">Kontakty</LinksItem>
+                    <LinksItem href="#footer">Kontakty</LinksItem> */}
                     <LinksItem href="https://www.fbe.cz/index.php">FBE Praha</LinksItem>
                     <LinksItem href="https://www.fbe.sk/">FBE Bratislava</LinksItem>
                   </LinksMenu>
