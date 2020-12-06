@@ -190,7 +190,7 @@ export const ValidationSchemaExample = () => {
                     render={({ field, form, meta }) => {
                       return (
                         <FormSemantic.Field>
-                          <Checkbox
+                          <FormSemantic.Checkbox
                             onChange={() => {
                               form.setFieldValue('souhlasUdaje', !field.value);
                             }}
@@ -214,7 +214,7 @@ export const ValidationSchemaExample = () => {
                     render={({ field, form, meta }) => {
                       return (
                         <FormSemantic.Field>
-                          <Checkbox
+                          <FormSemantic.Checkbox
                             onChange={() => {
                               form.setFieldValue(
                                 'souhlasNewsletter',

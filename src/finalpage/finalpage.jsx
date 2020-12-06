@@ -10,6 +10,7 @@ import {
   Text1,
   FinalScore,
   PrintableBodyWrapper,
+  ResultSection,
 } from '../styles/Container';
 import { TableExampleWarningShorthand } from './tableresult';
 import './reccomendation.jsx';
@@ -137,10 +138,13 @@ export const FinalPage = (props) => {
           <Title2>
             Výsledky vašeho samohodnocení v jednotlivých oblastech:
           </Title2>
+          <ResultSection>
           <TableExampleWarningShorthand tableResult={tableFillData(props)} />
+          </ResultSection>
         </Container>      
       </FullWidthContainer>
       <div class="pagebreak"> </div>
+      <ResultSection>
       <Radar
         data={data}
         type='radar'
@@ -149,6 +153,7 @@ export const FinalPage = (props) => {
         legend={{ display: false }}
         options={options}
       />
+      </ResultSection>
       <div class="pagebreak"> </div>
       <Kontakty />
       <Footer />

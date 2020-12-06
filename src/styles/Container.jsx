@@ -57,7 +57,7 @@ export const Text1 = styled.p`
   margin: auto;
   ${media('>desktop')} {
     font-size: 16px;
-    width: 720px;
+    width: 640px;
   }
   ${media('<=desktop', '>tablet')} {
     font-size: 16px;
@@ -237,9 +237,15 @@ export const SurveyInstruction = styled.div`
 `;
 
 export const FinalScore = styled.div`
-  font-weight: 400;
+  font-weight: 600;
   font-size: 36px;
   padding-top: 24px;
+  color: ${colors.darkBlue}
+`;
+
+
+export const ResultSection = styled.div`
+  padding-bottom: 25px;
 `;
 
 export const PrintableBodyWrapper = styled.div`
