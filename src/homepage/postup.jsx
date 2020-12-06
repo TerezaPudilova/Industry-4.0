@@ -6,10 +6,7 @@ import {
   SurveyDesc,
   SurveyInstruction,
   Title2,
-  ListInstruction,
-  SurveyDescSlim,
 } from '../styles/Container';
-import { colors } from '../styles/variables.js';
 import styled from '@emotion/styled';
 import { Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';

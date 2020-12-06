@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '../styles/variables.js';
-import media from "css-in-js-media";
+import media from 'css-in-js-media';
 import roboti from '../img/roboti.png';
 
 export const Container = styled.div`
@@ -27,17 +27,17 @@ export const Title1 = styled.h1`
   color: ${(props) =>
     props.bgColor === colors.darkBlue ? 'white' : 'inherit'};
   margin: auto;
-  ${media(">desktop")} {
+  ${media('>desktop')} {
     font-size: 25px;
     width: 640px;
   }
-  ${media("<=desktop", ">tablet")} {
+  ${media('<=desktop', '>tablet')} {
     font-size: 25px;
   }
-  ${media("<=tablet", ">phone")} {
+  ${media('<=tablet', '>phone')} {
     font-size: 25px;
   }
-  ${media("<=phone")} {
+  ${media('<=phone')} {
     font-size: 25px;
   }
 `;
@@ -51,38 +51,30 @@ export const Title2 = styled.h2`
 `;
 
 export const Text1 = styled.p`
-  /* font-size: 16px;
   text-align: center;
-  padding: 25px;
-  line-height: 1.6em;
-  width: 720px;
+  padding: 15px;
   margin: auto;
-  padding-bottom: 45px; */
-  text-align: center;
-  padding: 25px;
-  margin: auto;
-  padding-bottom: 45px;
-  ${media(">desktop")} {
+  ${media('>desktop')} {
     font-size: 16px;
     width: 720px;
   }
-  ${media("<=desktop", ">tablet")} {
+  ${media('<=desktop', '>tablet')} {
     font-size: 16px;
   }
-  ${media("<=tablet", ">phone")} {
+  ${media('<=tablet', '>phone')} {
     font-size: 16px;
   }
-  ${media("<=phone")} {
+  ${media('<=phone')} {
     font-size: 16px;
   }
- `;
+`;
 
 export const Title2Left = styled.h2`
   font-size: 20px;
   font-weight: 400;
   text-align: left;
   padding: 25px;
-  
+
   margin-bottom: 0px;
 `;
 
@@ -92,7 +84,6 @@ export const TextLeft = styled.p`
   padding: 25px;
   line-height: 1.6em;
   width: 450px;
- 
 `;
 
 export const QuestionTitle1 = styled.div`
@@ -139,7 +130,7 @@ export const TextFooter = styled.div`
 `;
 
 export const Contacts = styled.div`
-  max-width:1280px;
+  max-width: 1280px;
   display: flex;
   padding: 25px;
   margin: 25px;
@@ -196,7 +187,6 @@ export const FooterItem = styled.div`
   display: block;
   width: 33%;
   text-align: center;
-
 `;
 
 export const FooterMiddleItem = styled.div`
@@ -211,7 +201,7 @@ export const FooterMiddleItem = styled.div`
 
 export const SurveyDesc = styled.div`
   padding: 28px;
-  `;
+`;
 
 export const SurveyInstruction = styled.div`
   padding-left: 32px;
@@ -219,7 +209,30 @@ export const SurveyInstruction = styled.div`
 `;
 
 export const FinalScore = styled.div`
-font-weight: 400;
-font-size: 36px;
-padding-top: 24px;
-`
+  font-weight: 400;
+  font-size: 36px;
+  padding-top: 24px;
+`;
+
+export const PrintableBodyWrapper = styled.div`
+  @page {
+    size: landscape;
+    margin: 0cm;
+  }
+  @media print {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 10;
+    right: 10;
+    background-color: white;
+    display: block;
+    align-items: center;
+    .pagebreak {
+      page-break-after: always;
+    }
+    .noprint {
+      visibility: hidden;
+    }
+  }
+`;

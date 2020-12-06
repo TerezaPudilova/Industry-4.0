@@ -9,15 +9,16 @@ import {
   Title2,
   Text1,
   FinalScore,
+  PrintableBodyWrapper,
 } from '../styles/Container';
 import { TableExampleWarningShorthand } from './tableresult';
 import './reccomendation.jsx';
 import { getRecomendation } from './reccomendation.jsx';
 import { Footer } from '../homepage/footer.jsx';
 import { Button } from 'semantic-ui-react';
-//import styled from '@emotion/styled';
-//import { jsPDF } from "jspdf";
 import ReactDOMServer from 'react-dom/server';
+
+
 
 const categoryLabels = [
   'Měřící systémy',
@@ -28,6 +29,8 @@ const categoryLabels = [
   'Plánování a SCM',
   'Flexibilita technologií',
 ];
+
+
 
 const tableFillData = (props) => {
   const [tableResultData, setTableResultData] = useState([]);
@@ -42,9 +45,7 @@ const tableFillData = (props) => {
       notes: getRecomendation(i, categoryScore[i]),
     };
   }
-  //  setTableResultData(result => [...result, resultScore]);
-  console.log(resultScore);
-  return resultScore;
+   return resultScore;
 };
 
 export const FinalPage = (props) => {
@@ -71,14 +72,8 @@ export const FinalPage = (props) => {
 
   const options = {
     responsive: true,
-    devicePixelRatio: 4,
-    /*    plotOptions: {radar: { size: 140, polygons: {strokeColors: '#e9e9e9', fill: { colors: ['#f8f8f8', '#fff'] } } } },
-    chart: {
-      height: 350,
-      type: 'radar',
-    },
-    */
-    layout: { padding: { left: 50, right: 50, top: 50, bottom: 10 }},
+    devicePixelRatio: 2,
+       layout: { padding: { left: 50, right: 50, top: 50, bottom: 10 }},
     
     scale: {
       ticks: { suggestedMin: 0, suggestedMax: 21 },
@@ -95,6 +90,7 @@ export const FinalPage = (props) => {
   const resultScore = categoryScore.reduce((agg, curr) => agg + curr, 0) / 7;
   return (
     <>
+    <PrintableBodyWrapper>
       <Menu />
       <FullWidthContainer>
         <Container>
@@ -137,13 +133,14 @@ export const FinalPage = (props) => {
               změny směrem k celkové optimalizaci.
             </Text1>
           </Container>
+          <div class="pagebreak"> </div>
           <Title2>
             Výsledky vašeho samohodnocení v jednotlivých oblastech:
           </Title2>
           <TableExampleWarningShorthand tableResult={tableFillData(props)} />
-        </Container>
+        </Container>      
       </FullWidthContainer>
-
+      <div class="pagebreak"> </div>
       <Radar
         data={data}
         type='radar'
@@ -152,8 +149,10 @@ export const FinalPage = (props) => {
         legend={{ display: false }}
         options={options}
       />
+      <div class="pagebreak"> </div>
       <Kontakty />
       <Footer />
+      </PrintableBodyWrapper>
     </>
   );
 };

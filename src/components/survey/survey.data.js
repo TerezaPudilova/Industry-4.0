@@ -2,7 +2,7 @@ const surveyTestData = {
   categories: [
     {
       name: 'Měřící systémy, včetně MSA (Analýza systému měření)',
-      codeName:'MSA',
+      codeName: 'MSA',
       description: '',
       questions: [
         {
