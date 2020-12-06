@@ -20,7 +20,7 @@ export const Footer = () => {
           designed by Ingrid Haburaiová&Tereza Pudilová
           <br />
           <br />
-          <LinksItem href="https://www.linkedin.com/company/for-business-excellence-fbe-/">
+          <LinksItem href="https://www.linkedin.com/company/fbe-praha-s-r-o/">
             <img width="120px" src={LinkedInLogo} alt="logoLinkedIn" />
           </LinksItem>
         </FooterItem>
