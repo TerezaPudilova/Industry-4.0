@@ -21,7 +21,7 @@ export const Footer = () => {
           <br />
           <br />
           <LinksItem href="https://www.linkedin.com/company/fbe-praha-s-r-o/">
-            <img width="120px" src={LinkedInLogo} alt="logoLinkedIn" />
+            <img width="40%" src={LinkedInLogo} alt="logoLinkedIn" />
           </LinksItem>
         </FooterItem>
 

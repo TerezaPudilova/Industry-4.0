@@ -51,6 +51,18 @@ export const Title2 = styled.h2`
   margin-bottom: 0px;
 `;
 
+export const Title2Link = styled.a`
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 0px;
+  color: white;
+  &:hover {
+    text-decoration: underline;
+    color: white;
+  }
+`;
+
 export const Text1 = styled.p`
   text-align: center;
   padding: 15px;

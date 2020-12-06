@@ -9,6 +9,7 @@ import {
   Title2,
   Text1,
   FinalScore,
+  Title2Link,
   PrintableBodyWrapper,
 } from '../styles/Container';
 import Horvath from '../img/horvath.png';
@@ -35,7 +36,7 @@ export const Kontakty = () => {
                 koncepty Industry 4.0, blockchain, využití neuronových sítí a
                 aplikaci SMART řešení v provozu.
               </p>
-              <Title2>Email:karol.horvath@fbe.sk</Title2>
+              <Title2><Title2Link href="mailto:karol.horvath@fbe.sk">karol.horvath@fbe.sk</Title2Link></Title2>
             </ContactsText>
             <img className="noprint" src={Horvath} alt="horvath" />
 
@@ -48,7 +49,7 @@ export const Kontakty = () => {
                 zavádění nových technologií se zaměřením na snižování plýtvání,
                 dle principů Toyota Management System.{' '}
               </p>
-              <Title2>Email:tomas.marek@fbe.cz</Title2>
+              <Title2><Title2Link href="mailto:tomas.marek@fbe.cz">tomas.marek@fbe.cz</Title2Link></Title2>
             </ContactsText>
             <img className="noprint" src={Marek} alt="marek" />
           </Contacts>
