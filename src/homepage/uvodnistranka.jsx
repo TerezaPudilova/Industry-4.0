@@ -43,9 +43,11 @@ export const UvodniStranka = () => {
             potenciály na zlepšení.
           </Text1>
           <Buttons>
-            <Button secondary href="/dotaznik/MSA">
+            <Link to="/dotaznik/MSA">
+            <Button secondary >
               Začít
             </Button>
+            </Link>
           </Buttons>
         </Container>
         <RobotiWrapper>
