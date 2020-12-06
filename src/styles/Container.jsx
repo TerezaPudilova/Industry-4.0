@@ -8,6 +8,7 @@ export const Container = styled.div`
   margin: 0 auto;
   font-family: 'Roboto';
   text-align: -webkit-center;
+  justify-content: center;
 `;
 
 export const FullWidthContainer = styled.div`
