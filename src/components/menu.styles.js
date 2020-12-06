@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 import { colors } from '../styles/variables.js';
+import media from "css-in-js-media";
+import myImage from '../img/menu.png';
 
 export const Wrapper = styled.nav`
   background-color: white;
@@ -26,9 +28,23 @@ export const LinksMenu = styled.div`
   font-weight: bold;
   text-transform: uppercase;
   color: ${colors.darkBlue};
+
+  ${media("<=tablet", ">phone")} {
+    flex-direction: row;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    border: none;
+
+    background-color: transparent;
+    background-image: url(${myImage});
+    background-size: contain;
+
+    cursor: pointer;
+  }
 `;
 
 export const Logo = styled.div`
   margin-left: 50px;
   margin-top: 10px;
-`
+`;

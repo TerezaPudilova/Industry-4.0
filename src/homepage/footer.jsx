@@ -8,6 +8,8 @@ import {
   FooterPart,
   FooterMiddleItem,
 } from '../styles/Container';
+import LinkedInLogo from '../img/LI-Logo.png';
+import { LinksItem } from '../components/menu.styles';
 
 export const Footer = () => {
   return (
@@ -18,7 +20,9 @@ export const Footer = () => {
           designed by Ingrid Haburaiová&Tereza Pudilová
           <br />
           <br />
-          <img width="120px" src="/img/LI-Logo.png" alt="logoLinkedIn" />
+          <LinksItem href="https://www.linkedin.com/company/for-business-excellence-fbe-/">
+          <img width="120px" src={LinkedInLogo} alt="logoLinkedIn" />
+          </LinksItem>
         </FooterItem>
 
         <FooterMiddleItem>

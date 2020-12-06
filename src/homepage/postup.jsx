@@ -7,6 +7,7 @@ import {
   SurveyInstruction,
   Title2,
   ListInstruction,
+  SurveyDescSlim,
 } from '../styles/Container';
 import { colors } from '../styles/variables.js';
 import styled from '@emotion/styled';
@@ -20,7 +21,7 @@ const List1 = styled.ul`
 `;
 
 const ListNumber = styled.li`
-  display:block;
+  display: block;
   list-style: none;
   padding: 0;
   width: 33.33333%;
